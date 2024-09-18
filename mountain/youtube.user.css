@@ -1,8 +1,13 @@
 /* ==UserStyle==
-@name YouTube Mountain
-@homepageURL https://github.com/axax-loll/userstyles
+@name YouTube Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/youtube
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/youtube
 @version 4.2.10
-@author azikx
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/youtube/catppuccin.user.css
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ayoutube
+@description Soothing pastel theme for YouTube
+@author Catppuccin
+@license MIT
 
 @preprocessor less
 @var select darkFlavor "Dark Flavor" ["macchiato:Macchiato"]
