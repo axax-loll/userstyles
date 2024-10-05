@@ -11,7 +11,7 @@
 
 @preprocessor less
 @var select darkFlavor "Dark Flavor" ["paradisa:Paradise"]
-@var select accentColor "Accent" ["pony:pony", "flaminga:flaminga", "pink:pink", "purple:purple*", "red:red", "oranga:oranga", "ogran:ogran", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "grey:Gray"]
+@var select accentColor "Accent" ["pony:pony", "flaminga:flaminga", "pink:pink", "purple:purple*", "red:red", "oranga:oranga", "ogran:ogran", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
 
 @-moz-document domain('home-manager-options.extranix.com') {
@@ -38,7 +38,7 @@
     @lavender: @paradisa[@@lookup][@lavender];
     @text: @paradisa[@@lookup][@text];
     @subtext1: @paradisa[@@lookup][@subtext1];
-    @grey: @paradisa[@@lookup][@grey];
+    @subtext0: @paradisa[@@lookup][@subtext0];
     @overlay2: @paradisa[@@lookup][@overlay2];
     @overlay1: @paradisa[@@lookup][@overlay1];
     @overlay0: @paradisa[@@lookup][@overlay0];
@@ -59,7 +59,7 @@
     input,
     textarea {
       &::placeholder {
-        color: @grey !important;
+        color: @subtext0 !important;
       }
     }
 
@@ -183,5 +183,5 @@
 
 /* prettier-ignore */
 @paradisa: {
-  @paradisa:    { @pony: #BBB6B6; @flaminga: #A988B0; @pink: #A988B0; @purple: #A988B0; @red: #B66467; @oranga: #B66467; @ogran: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @text_filter: brightness(0) saturate(100%) invert(80%) sepia(11%) saturate(726%) hue-rotate(192deg) brightness(104%) contrast(92%); @subtext1: #BBB6B6; @grey: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
+  @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
 }
