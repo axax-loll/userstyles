@@ -1,11 +1,13 @@
 /* ==UserStyle==
-@name         GitHub Paradisa
-@namespace    github.com/axax-loll/userstyles/tree/main
-@homepageURL  https://github.com/axax-loll/userstyles/tree/main
-@version      1.0.0
-@description  Lolz github theme
-@author       azikx
-@license      MIT
+@name Github paradisa
+@namespace github.com/axax-loll/userstyles/
+@homepageURL https://github.com/axax-loll/userstyles/tree/main
+@version 1.0.1
+@updateURL https://github.com/axax-loll/userstyles/tree/main/github.user.css
+@supportURL https://github.com/axax-loll/userstyles/tree/main
+@description Paradise for Github
+@author azikx
+@license MIT
 
 @preprocessor less
 @var select darkFlavor "Dark Flavor" ["paradisa:paradisa"]
