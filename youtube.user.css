@@ -422,7 +422,7 @@
     }
 
     #ytd-player #container when (@oled =0) {
-      background: @crust !important;
+      background: #000000 !important;
     }
 
     .ytp-progress-list when not(@lookup = latte) {
