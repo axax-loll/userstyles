@@ -3,15 +3,15 @@
 @namespace github.com/axax-loll/userstyles
 @homepageURL https://github.com/axax-loll/userstyles/blob/main/youtube/youtube.user.css
 @version 1.0.0
-@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/youtube/catppuccin.user.css
-@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ayoutube
+@updateURL https://github.com/paradisa/userstyles/raw/main/styles/youtube/paradisa.user.css
+@supportURL https://github.com/paradisa/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ayoutube
 @description Dontdk whatto write
 @author azikx
 @license MIT
 
 @preprocessor less
-@var select darkFlavor "Dark Flavor" ["frappe:Paradise"]
-@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+@var select darkFlavor "Dark Flavor" ["paradisa:Paradise"]
+@var select accentColor "Accent" ["pony:pony", "flaminga:flaminga", "pink:pink", "purple:purple*", "red:red", "oranga:oranga", "ogran:ogran", "yellow:yellow", "green:green", "teal:teal", "blue:blue", "sapphire:sapphire", "sky:sky", "lavender:lavender", "grey:gray"]
 
 @var checkbox logo "Enable YouTube logo" 1
 @var checkbox oled "Enable black bars" 0
@@ -19,38 +19,38 @@
 
 @-moz-document domain('youtube.com') {
   :root[dark] {
-    #catppuccin(@darkFlavor, @accentColor);
+    #paradisa(@darkFlavor, @accentColor);
   }
 
-  #catppuccin(@lookup, @accent) {
-    @rosewater: @catppuccin[@@lookup][@rosewater];
-    @flamingo: @catppuccin[@@lookup][@flamingo];
-    @pink: @catppuccin[@@lookup][@pink];
-    @mauve: @catppuccin[@@lookup][@mauve];
-    @red: @catppuccin[@@lookup][@red];
-    @maroon: @catppuccin[@@lookup][@maroon];
-    @peach: @catppuccin[@@lookup][@peach];
-    @yellow: @catppuccin[@@lookup][@yellow];
-    @green: @catppuccin[@@lookup][@green];
-    @teal: @catppuccin[@@lookup][@teal];
-    @sky: @catppuccin[@@lookup][@sky];
-    @sapphire: @catppuccin[@@lookup][@sapphire];
-    @blue: @catppuccin[@@lookup][@blue];
-    @lavender: @catppuccin[@@lookup][@lavender];
-    @text: @catppuccin[@@lookup][@text];
-    @subtext1: @catppuccin[@@lookup][@subtext1];
-    @subtext0: @catppuccin[@@lookup][@subtext0];
-    @overlay2: @catppuccin[@@lookup][@overlay2];
-    @overlay1: @catppuccin[@@lookup][@overlay1];
-    @overlay0: @catppuccin[@@lookup][@overlay0];
-    @surface2: @catppuccin[@@lookup][@surface2];
-    @surface1: @catppuccin[@@lookup][@surface1];
-    @surface0: @catppuccin[@@lookup][@surface0];
-    @base: @catppuccin[@@lookup][@base];
-    @mantle: @catppuccin[@@lookup][@mantle];
-    @crust: @catppuccin[@@lookup][@crust];
-    @accent-color: @catppuccin[@@lookup][@@accent];
-    @text-filter: @catppuccin[@@lookup][@text_filter];
+  #paradisa(@lookup, @accent) {
+    @pony: @paradisa[@@lookup][@pony];
+    @flaminga: @paradisa[@@lookup][@flaminga];
+    @pink: @paradisa[@@lookup][@pink];
+    @purple: @paradisa[@@lookup][@purple];
+    @red: @paradisa[@@lookup][@red];
+    @oranga: @paradisa[@@lookup][@oranga];
+    @ogran: @paradisa[@@lookup][@ogran];
+    @yellow: @paradisa[@@lookup][@yellow];
+    @green: @paradisa[@@lookup][@green];
+    @teal: @paradisa[@@lookup][@teal];
+    @sky: @paradisa[@@lookup][@sky];
+    @sapphire: @paradisa[@@lookup][@sapphire];
+    @blue: @paradisa[@@lookup][@blue];
+    @lavender: @paradisa[@@lookup][@lavender];
+    @text: @paradisa[@@lookup][@text];
+    @subtext1: @paradisa[@@lookup][@subtext1];
+    @grey: @paradisa[@@lookup][@grey];
+    @overlay2: @paradisa[@@lookup][@overlay2];
+    @overlay1: @paradisa[@@lookup][@overlay1];
+    @overlay0: @paradisa[@@lookup][@overlay0];
+    @surface2: @paradisa[@@lookup][@surface2];
+    @surface1: @paradisa[@@lookup][@surface1];
+    @surface0: @paradisa[@@lookup][@surface0];
+    @base: @paradisa[@@lookup][@base];
+    @mantle: @paradisa[@@lookup][@mantle];
+    @crust: @paradisa[@@lookup][@crust];
+    @accent-color: @paradisa[@@lookup][@@accent];
+    @text-filter: @paradisa[@@lookup][@text_filter];
 
     @white: if(@lookup = latte, @base, @text);
     @black: if(@lookup = latte, @text, @base);
@@ -66,7 +66,7 @@
     input,
     textarea {
       &::placeholder {
-        color: @subtext0 !important;
+        color: @grey !important;
       }
     }
 
@@ -78,7 +78,7 @@
     &[system-icons],
     &[darker-dark-theme] {
       --yt-spec-white-1: @text !important;
-      --yt-spec-white-2: @subtext0 !important;
+      --yt-spec-white-2: @grey !important;
       --yt-spec-white-3: @subtext1 !important;
       --yt-spec-white-4: darken(@subtext1, 5%) !important;
       --yt-spec-black-1: @overlay1 !important;
@@ -87,14 +87,14 @@
       --yt-spec-black-4: @surface1 !important;
       --yt-spec-black-pure: @surface0 !important;
       --yt-spec-grey-1: @text !important;
-      --yt-spec-grey-2: @subtext0 !important;
+      --yt-spec-grey-2: @grey !important;
       --yt-spec-grey-3: @subtext1 !important;
       --yt-spec-grey-4: @overlay2 !important;
       --yt-spec-grey-5: @overlay1 !important;
       --yt-brand-youtube-red: @accent-color !important;
       --yt-brand-medium-red: @accent-color !important;
       --yt-brand-light-red: @accent-color !important;
-      --yt-spec-red-30: @peach !important;
+      --yt-spec-red-30: @ogran !important;
       --yt-spec-red-70: @red !important;
       --yt-spec-pale-blue: @sky !important;
       --yt-spec-light-blue: @sky !important;
@@ -102,8 +102,8 @@
       --yt-spec-navy-blue: @teal !important;
       --yt-spec-light-green: @green !important;
       --yt-spec-dark-green: @green !important;
-      --yt-spec-yellow: @peach !important;
-      --yt-spec-black-pure-alpha-5: @subtext0 !important;
+      --yt-spec-yellow: @ogran !important;
+      --yt-spec-black-pure-alpha-5: @grey !important;
       --yt-spec-black-pure-alpha-10: @overlay2 !important;
       --yt-spec-black-pure-alpha-15: fadeout(@crust, 0.15) !important;
       --yt-spec-black-pure-alpha-30: fadeout(@crust, 0.3) !important;
@@ -132,7 +132,7 @@
       --yt-spec-outline: @surface0 !important;
       --yt-spec-shadow: fadeout(@crust, 0.25) !important;
       --yt-spec-text-primary: @text !important;
-      --yt-spec-text-secondary: @subtext0 !important;
+      --yt-spec-text-secondary: @grey !important;
       --yt-spec-text-disabled: @subtext1 !important;
       --yt-spec-text-primary-inverse: @crust !important;
       --yt-spec-call-to-action: @accent-color !important;
@@ -159,8 +159,8 @@
       --yt-spec-static-brand-black: @base !important;
       --yt-spec-static-clear-color: fadeout(@crust, 0) !important;
       --yt-spec-static-clear-black: fadeout(@crust, 0) !important;
-      --yt-spec-static-ad-yellow: @peach !important;
-      --yt-spec-static-grey: @subtext0 !important;
+      --yt-spec-static-ad-yellow: @ogran !important;
+      --yt-spec-static-grey: @grey !important;
       --yt-spec-static-overlay-background-solid: @crust !important;
       --yt-spec-static-overlay-background-heavy: @crust;
       --yt-spec-static-overlay-background-medium: fade(@crust, 50%) !important;
@@ -174,11 +174,11 @@
       ) !important;
       --yt-spec-static-overlay-text-primary: @text !important;
       --yt-spec-static-overlay-text-secondary: fadeout(
-        @subtext0,
+        @grey,
         0.7
       ) !important;
       --yt-spec-static-overlay-text-disabled: fadeout(
-        @subtext0,
+        @grey,
         0.3
       ) !important;
       --yt-spec-static-overlay-call-to-action: @accent-color !important;
@@ -190,7 +190,7 @@
       --yt-spec-static-overlay-touch-response: @overlay1 !important;
       --yt-spec-static-overlay-touch-response-inverse: @surface1 !important;
       --yt-spec-static-overlay-background-brand: @accent-color !important;
-      --yt-spec-assistive-feed-themed-gradient-1: @subtext0 !important;
+      --yt-spec-assistive-feed-themed-gradient-1: @grey !important;
       --yt-spec-assistive-feed-themed-gradient-2: @lavender !important;
       --yt-spec-assistive-feed-themed-gradient-3: @red !important;
       --yt-spec-brand-background-solid: @base !important;
@@ -253,23 +253,23 @@
       --yt-live-chat-secondary-background-color: @surface1;
       --yt-live-chat-toast-background-color: @surface2 !important;
       --yt-live-chat-mode-change-background-color: @base !important;
-      --yt-live-chat-secondary-text-color: @subtext0 !important;
+      --yt-live-chat-secondary-text-color: @grey !important;
       --yt-live-chat-tertiary-text-color: fadeout(@text, 0.54) !important;
-      --yt-live-chat-text-input-field-inactive-underline-color: @subtext0 !important;
-      --yt-live-chat-text-input-field-placeholder-color: @subtext0 !important;
+      --yt-live-chat-text-input-field-inactive-underline-color: @grey !important;
+      --yt-live-chat-text-input-field-placeholder-color: @grey !important;
       --yt-live-chat-enabled-send-button-color: @text !important;
       --yt-live-chat-disabled-icon-button-color: @subtext1 !important;
       --yt-live-chat-picker-button-hover-color: @accent-color !important;
       --yt-live-chat-mention-background-color: @accent-color !important;
       --yt-live-chat-mention-text-color: @text !important;
-      --yt-live-chat-deleted-message-color: @subtext0;
+      --yt-live-chat-deleted-message-color: @grey;
       --yt-live-chat-deleted-message-bar-color: @subtext1 !important;
       --yt-live-chat-reconnect-message-color: @text !important;
       --yt-live-chat-disabled-button-background-color: @overlay0 !important;
       --yt-live-chat-sub-panel-background-color: @base !important;
       --yt-live-chat-sub-panel-background-color-transparent: @mantle !important;
       --yt-live-chat-moderator-color: @lavender !important;
-      --yt-live-chat-owner-color: @peach !important;
+      --yt-live-chat-owner-color: @ogran !important;
       --yt-live-chat-message-highlight-background-color: @base !important;
       --yt-live-chat-sponsor-color: @green !important;
       --yt-live-chat-overlay-color: fadeout(@mantle, 0.5);
@@ -279,8 +279,8 @@
         @mantle,
         0.3
       ) !important;
-      --yt-grey: @subtext0 !important;
-      --yt-live-chat-text-input-field-suggestion-background-color: @subtext0 !important;
+      --yt-grey: @grey !important;
+      --yt-live-chat-text-input-field-suggestion-background-color: @grey !important;
       --yt-live-chat-text-input-field-suggestion-background-color-hover: @subtext1 !important;
       --yt-emoji-picker-search-background-color: @surface0 !important;
       --yt-emoji-picker-search-color: @text !important;
@@ -335,14 +335,14 @@
       --sb-main-bg-color: @base !important;
       --sb-main-fg-color: @text !important;
       --sb-grey-bg-color: @base !important;
-      --sb-grey-fg-color: @subtext0 !important;
+      --sb-grey-fg-color: @grey !important;
       --sb-red-bg-color: @accent-color !important;
     }
 
     &:not(.style-scope) {
       --primary-text-color: @text !important;
       --primary-background-color: @base !important;
-      --secondary-text-color: @subtext0 !important;
+      --secondary-text-color: @grey !important;
       --disabled-text-color: @subtext1 !important;
       --divider-color: @overlay0 !important;
       --error-color: @red !important;
@@ -355,13 +355,13 @@
       --light-theme-background-color: @base !important;
       --light-theme-base-color: @text !important;
       --light-theme-text-color: @text !important;
-      --light-theme-secondary-color: @subtext0 !important;
+      --light-theme-secondary-color: @grey !important;
       --light-theme-disabled-color: @subtext1 !important;
       --light-theme-divider-color: @overlay0 !important;
       --dark-theme-background-color: @base !important;
       --dark-theme-base-color: @text !important;
       --dark-theme-text-color: @text !important;
-      --dark-theme-secondary-color: @subtext0 !important;
+      --dark-theme-secondary-color: @grey !important;
       --dark-theme-disabled-color: @subtext1 !important;
       --dark-theme-divider-color: @overlay0 !important;
     }
@@ -438,7 +438,7 @@
       --yt-lightsource-section3-color: @surface1 !important;
       --yt-lightsource-section4-color: @surface2 !important;
       --yt-lightsource-primary-title-color: @text !important;
-      --yt-lightsource-secondary-title-color: @subtext0 !important;
+      --yt-lightsource-secondary-title-color: @grey !important;
     }
 
     yt-live-chat-renderer {
@@ -613,7 +613,7 @@
 
     .yt-spec-button-shape-next--disabled {
       background-color: fade(@overlay0, 50%);
-      color: @subtext0;
+      color: @grey;
     }
 
     .yt-spec-button-shape-next--overlay {
@@ -658,7 +658,7 @@
     }
 
     .yt-spec-button-shape-next--disabled.yt-spec-button-shape-next--filled {
-      color: @subtext0;
+      color: @grey;
       background-color: fade(@surface1, 70%);
     }
 
@@ -806,7 +806,7 @@
       background-color: @surface2;
 
       &::after {
-        background-color: @subtext0;
+        background-color: @grey;
       }
     }
     .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
@@ -951,7 +951,7 @@
       }
 
       .YtwFactoidRendererLabel {
-        color: @subtext0;
+        color: @grey;
       }
       .YtwFactoidRendererValue {
         color: @text;
@@ -1017,7 +1017,7 @@
     }
 
     #primaryProgress.tp-yt-paper-progress {
-      background: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+      background: linear-gradient(139deg, @ogran, @oranga, @red, @pink);
     }
 
     #container.ytd-pdg-comment-preview-renderer {
@@ -1071,7 +1071,7 @@
     }
 
     .profile-badge-view-model-wiz__badge-subtitle {
-      color: @subtext0 !important;
+      color: @grey !important;
     }
 
     .yt-profile-identity-info-view-model-wiz__divider {
@@ -1093,7 +1093,7 @@
     .yt-profile-identity-info-view-model-wiz__metadata-content,
     .yt-profile-info-view-model-wiz__section-subtitle,
     .yt-comment-interaction-view-model-wiz__comment-content {
-      color: @subtext0;
+      color: @grey;
     }
   }
 }
@@ -1101,37 +1101,37 @@
 @-moz-document url-prefix('https://studio.youtube.com')
 {
   :root[dark] {
-    #catppuccin(@darkFlavor, @accentColor);
+    #paradisa(@darkFlavor, @accentColor);
   }
 
-  #catppuccin(@lookup, @accent) {
-    @rosewater: @catppuccin[@@lookup][@rosewater];
-    @flamingo: @catppuccin[@@lookup][@flamingo];
-    @pink: @catppuccin[@@lookup][@pink];
-    @mauve: @catppuccin[@@lookup][@mauve];
-    @red: @catppuccin[@@lookup][@red];
-    @maroon: @catppuccin[@@lookup][@maroon];
-    @peach: @catppuccin[@@lookup][@peach];
-    @yellow: @catppuccin[@@lookup][@yellow];
-    @green: @catppuccin[@@lookup][@green];
-    @teal: @catppuccin[@@lookup][@teal];
-    @sky: @catppuccin[@@lookup][@sky];
-    @sapphire: @catppuccin[@@lookup][@sapphire];
-    @blue: @catppuccin[@@lookup][@blue];
-    @lavender: @catppuccin[@@lookup][@lavender];
-    @text: @catppuccin[@@lookup][@text];
-    @subtext1: @catppuccin[@@lookup][@subtext1];
-    @subtext0: @catppuccin[@@lookup][@subtext0];
-    @overlay2: @catppuccin[@@lookup][@overlay2];
-    @overlay1: @catppuccin[@@lookup][@overlay1];
-    @overlay0: @catppuccin[@@lookup][@overlay0];
-    @surface2: @catppuccin[@@lookup][@surface2];
-    @surface1: @catppuccin[@@lookup][@surface1];
-    @surface0: @catppuccin[@@lookup][@surface0];
-    @base: @catppuccin[@@lookup][@base];
-    @mantle: @catppuccin[@@lookup][@mantle];
-    @crust: @catppuccin[@@lookup][@crust];
-    @accent-color: @catppuccin[@@lookup][@@accent];
+  #paradisa(@lookup, @accent) {
+    @pony: @paradisa[@@lookup][@pony];
+    @flaminga: @paradisa[@@lookup][@flaminga];
+    @pink: @paradisa[@@lookup][@pink];
+    @purple: @paradisa[@@lookup][@purple];
+    @red: @paradisa[@@lookup][@red];
+    @oranga: @paradisa[@@lookup][@oranga];
+    @ogran: @paradisa[@@lookup][@ogran];
+    @yellow: @paradisa[@@lookup][@yellow];
+    @green: @paradisa[@@lookup][@green];
+    @teal: @paradisa[@@lookup][@teal];
+    @sky: @paradisa[@@lookup][@sky];
+    @sapphire: @paradisa[@@lookup][@sapphire];
+    @blue: @paradisa[@@lookup][@blue];
+    @lavender: @paradisa[@@lookup][@lavender];
+    @text: @paradisa[@@lookup][@text];
+    @subtext1: @paradisa[@@lookup][@subtext1];
+    @grey: @paradisa[@@lookup][@grey];
+    @overlay2: @paradisa[@@lookup][@overlay2];
+    @overlay1: @paradisa[@@lookup][@overlay1];
+    @overlay0: @paradisa[@@lookup][@overlay0];
+    @surface2: @paradisa[@@lookup][@surface2];
+    @surface1: @paradisa[@@lookup][@surface1];
+    @surface0: @paradisa[@@lookup][@surface0];
+    @base: @paradisa[@@lookup][@base];
+    @mantle: @paradisa[@@lookup][@mantle];
+    @crust: @paradisa[@@lookup][@crust];
+    @accent-color: @paradisa[@@lookup][@@accent];
 
     color-scheme: if(@lookup = latte, light, dark);
 
@@ -1142,7 +1142,7 @@
     input,
     textarea {
       &::placeholder {
-        color: @subtext0 !important;
+        color: @grey !important;
       }
     }
 
@@ -1174,7 +1174,7 @@
       --ytcp-text-primary-inverse: @base !important;
       --ytcp-static-overlay-text-primary-inverse: @base !important;
       --ytcp-wordmark-text: @text !important;
-      --ytcp-text-secondary: @subtext0 !important;
+      --ytcp-text-secondary: @grey !important;
       --ytcp-text-disabled: @subtext1 !important;
       --ytcp-overlay-text-primary: @overlay2 !important;
 
@@ -1195,8 +1195,8 @@
       --ytcp-container-border-color: @surface0 !important;
       --ytcp-container-hovered-border-color: @surface0 !important;
       --ytcp-line-divider-solid: @surface0 !important;
-      --ytcp-container-border-color-inverse: @subtext0 !important;
-      --ytcp-line-divider-solid-inverse: @subtext0 !important;
+      --ytcp-container-border-color-inverse: @grey !important;
+      --ytcp-line-divider-solid-inverse: @grey !important;
 
       --ytcp-call-to-action: @accent-color !important;
       --ytcp-call-to-action-inverse: @mantle !important;
@@ -1232,12 +1232,12 @@
       --ytcp-analytics-pine: @green !important;
       --ytcp-analytics-pine-inverse: @green !important;
       --ytcp-analytics-parrot: @green !important;
-      --ytcp-themed-yellow: @peach !important;
-      --ytmus-genre-primary-gold: @peach !important;
-      --ytcp-yellow-inverse: @peach !important;
-      --ytcp-badge-yellow: @peach !important;
-      --ytcp-analytics-yellow: @peach !important;
-      --ytcp-analytics-apricot: @peach !important;
+      --ytcp-themed-yellow: @ogran !important;
+      --ytmus-genre-primary-gold: @ogran !important;
+      --ytcp-yellow-inverse: @ogran !important;
+      --ytcp-badge-yellow: @ogran !important;
+      --ytcp-analytics-yellow: @ogran !important;
+      --ytcp-analytics-apricot: @ogran !important;
       --ytcp-suggested-action: @teal !important;
       --ytcp-analytics-overview: @teal !important;
       --ytcp-analytics-revenue: @teal !important;
@@ -1247,10 +1247,10 @@
       --ytcp-analytics-audience: @lavender !important;
       --ytcp-analytics-engagement: @pink !important;
       --ytcp-analytics-revenue-secondary: @pink !important;
-      --ytcp-analytics-bubblegum: @flamingo !important;
-      --ytmus-genre-primary-ruby: @flamingo !important;
-      --ytmus-genre-primary-salmon: @mauve !important;
-      --ytmus-genre-primary-orange: @maroon !important;
+      --ytcp-analytics-bubblegum: @flaminga !important;
+      --ytmus-genre-primary-ruby: @flaminga !important;
+      --ytmus-genre-primary-salmon: @purple !important;
+      --ytmus-genre-primary-orange: @oranga !important;
       --ytmus-genre-primary-sky: @sky !important;
       --ytmus-genre-primary-sky-inverse: @sky !important;
 
@@ -1277,37 +1277,37 @@
 
 @-moz-document domain('m.youtube.com') {
   html[darker-dark-theme] {
-    #catppuccin(@darkFlavor, @accentColor);
+    #paradisa(@darkFlavor, @accentColor);
   }
 
-  #catppuccin(@lookup, @accent) {
-    @rosewater: @catppuccin[@@lookup][@rosewater];
-    @flamingo: @catppuccin[@@lookup][@flamingo];
-    @pink: @catppuccin[@@lookup][@pink];
-    @mauve: @catppuccin[@@lookup][@mauve];
-    @red: @catppuccin[@@lookup][@red];
-    @maroon: @catppuccin[@@lookup][@maroon];
-    @peach: @catppuccin[@@lookup][@peach];
-    @yellow: @catppuccin[@@lookup][@yellow];
-    @green: @catppuccin[@@lookup][@green];
-    @teal: @catppuccin[@@lookup][@teal];
-    @sky: @catppuccin[@@lookup][@sky];
-    @sapphire: @catppuccin[@@lookup][@sapphire];
-    @blue: @catppuccin[@@lookup][@blue];
-    @lavender: @catppuccin[@@lookup][@lavender];
-    @text: @catppuccin[@@lookup][@text];
-    @subtext1: @catppuccin[@@lookup][@subtext1];
-    @subtext0: @catppuccin[@@lookup][@subtext0];
-    @overlay2: @catppuccin[@@lookup][@overlay2];
-    @overlay1: @catppuccin[@@lookup][@overlay1];
-    @overlay0: @catppuccin[@@lookup][@overlay0];
-    @surface2: @catppuccin[@@lookup][@surface2];
-    @surface1: @catppuccin[@@lookup][@surface1];
-    @surface0: @catppuccin[@@lookup][@surface0];
-    @base: @catppuccin[@@lookup][@base];
-    @mantle: @catppuccin[@@lookup][@mantle];
-    @crust: @catppuccin[@@lookup][@crust];
-    @accent-color: @catppuccin[@@lookup][@@accent];
+  #paradisa(@lookup, @accent) {
+    @pony: @paradisa[@@lookup][@pony];
+    @flaminga: @paradisa[@@lookup][@flaminga];
+    @pink: @paradisa[@@lookup][@pink];
+    @purple: @paradisa[@@lookup][@purple];
+    @red: @paradisa[@@lookup][@red];
+    @oranga: @paradisa[@@lookup][@oranga];
+    @ogran: @paradisa[@@lookup][@ogran];
+    @yellow: @paradisa[@@lookup][@yellow];
+    @green: @paradisa[@@lookup][@green];
+    @teal: @paradisa[@@lookup][@teal];
+    @sky: @paradisa[@@lookup][@sky];
+    @sapphire: @paradisa[@@lookup][@sapphire];
+    @blue: @paradisa[@@lookup][@blue];
+    @lavender: @paradisa[@@lookup][@lavender];
+    @text: @paradisa[@@lookup][@text];
+    @subtext1: @paradisa[@@lookup][@subtext1];
+    @grey: @paradisa[@@lookup][@grey];
+    @overlay2: @paradisa[@@lookup][@overlay2];
+    @overlay1: @paradisa[@@lookup][@overlay1];
+    @overlay0: @paradisa[@@lookup][@overlay0];
+    @surface2: @paradisa[@@lookup][@surface2];
+    @surface1: @paradisa[@@lookup][@surface1];
+    @surface0: @paradisa[@@lookup][@surface0];
+    @base: @paradisa[@@lookup][@base];
+    @mantle: @paradisa[@@lookup][@mantle];
+    @crust: @paradisa[@@lookup][@crust];
+    @accent-color: @paradisa[@@lookup][@@accent];
 
     background-color: @base !important;
     color: @text !important;
@@ -1394,7 +1394,7 @@
 }
 
 /* prettier-ignore */
-@catppuccin: {
-  @frappe:    { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @text_filter: brightness(0) saturate(100%) invert(80%) sepia(11%) saturate(726%) hue-rotate(192deg) brightness(104%) contrast(92%); @subtext1: #E8E3E3; @subtext0: #E8E3E3; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
+@paradisa: {
+  @paradisa:    { @pony: #BBB6B6; @flaminga: #A988B0; @pink: #A988B0; @purple: #A988B0; @red: #B66467; @oranga: #B66467; @ogran: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @text_filter: brightness(0) saturate(100%) invert(80%) sepia(11%) saturate(726%) hue-rotate(192deg) brightness(104%) contrast(92%); @subtext1: #BBB6B6; @grey: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
 }
 
