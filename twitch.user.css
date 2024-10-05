@@ -651,9 +651,6 @@
   .tw-root--theme-dark {
     #paradisa(@darkFlavor);
   }
-  .tw-root--theme-light {
-    #paradisa(@lightFlavor);
-  }
 
   #paradisa(@lookup) {
     @base: @paradisa[@@lookup][@base];
