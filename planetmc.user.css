@@ -1,0 +1,381 @@
+/* ==UserStyle==
+@name Planet Minecraft paradisa
+@namespace github.com/paradisa/userstyles/styles/planet-minecraft
+@homepageURL https://github.com/paradisa/userstyles/tree/main/styles/planet-minecraft
+@version 0.0.4
+@updateURL https://github.com/paradisa/userstyles/raw/main/styles/planet-minecraft/paradisa.user.css
+@supportURL https://github.com/paradisa/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Aplanet-minecraft
+@description Soothing pastel theme for Planet Minecraft
+@author paradisa
+@license MIT
+
+@preprocessor less
+@var select darkFlavor "Dark Flavor" ["paradisa:paradisa"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@-moz-document domain("planetminecraft.com") {
+  [data-theme="dark"] {
+    #paradisa(@darkFlavor, @accentColor);
+  }
+
+  #paradisa(@lookup, @accent) {
+    @rosewater: @paradisa[@@lookup][@rosewater];
+    @flamingo: @paradisa[@@lookup][@flamingo];
+    @pink: @paradisa[@@lookup][@pink];
+    @mauve: @paradisa[@@lookup][@mauve];
+    @red: @paradisa[@@lookup][@red];
+    @maroon: @paradisa[@@lookup][@maroon];
+    @peach: @paradisa[@@lookup][@peach];
+    @yellow: @paradisa[@@lookup][@yellow];
+    @green: @paradisa[@@lookup][@green];
+    @teal: @paradisa[@@lookup][@teal];
+    @sky: @paradisa[@@lookup][@sky];
+    @sapphire: @paradisa[@@lookup][@sapphire];
+    @blue: @paradisa[@@lookup][@blue];
+    @lavender: @paradisa[@@lookup][@lavender];
+    @text: @paradisa[@@lookup][@text];
+    @subtext1: @paradisa[@@lookup][@subtext1];
+    @subtext0: @paradisa[@@lookup][@subtext0];
+    @overlay2: @paradisa[@@lookup][@overlay2];
+    @overlay1: @paradisa[@@lookup][@overlay1];
+    @overlay0: @paradisa[@@lookup][@overlay0];
+    @surface2: @paradisa[@@lookup][@surface2];
+    @surface1: @paradisa[@@lookup][@surface1];
+    @surface0: @paradisa[@@lookup][@surface0];
+    @base: @paradisa[@@lookup][@base];
+    @mantle: @paradisa[@@lookup][@mantle];
+    @crust: @paradisa[@@lookup][@crust];
+    @accent-color: @paradisa[@@lookup][@@accent];
+
+    color-scheme: if(@lookup = latte, light, dark);
+
+    ::selection {
+      background-color: fade(@accent-color, 30%);
+    }
+
+    input,
+    textarea {
+      &::placeholder {
+        color: @subtext0 !important;
+      }
+    }
+
+    --body-bg: @crust;
+    --header-bg: @base;
+    --content-bg: @surface0;
+    --container-bg: @base;
+    --menu-bg: @surface0;
+    --menu-color: @subtext1;
+    --menu-selected-bg: @surface1;
+    --menu-selected-color: @accent-color;
+    --footer-bg: @mantle;
+    --bg-navbar: @mantle;
+    --tab-selected: @accent-color;
+    --input-bg: @surface0;
+    --dark-mid-bg: @base;
+    --title-color: @text;
+    --text-color: @text;
+    --text-color-medium: @subtext0;
+    --text-color-light: @subtext1;
+    --border-color: @base;
+    --footer-a-color: @accent-color;
+    --nav-hover: @accent-color;
+    --stat-color: @red;
+    --a-color: @accent-color;
+    --a-hover: @accent-color;
+    --a-selected: fade(@accent-color, 80%);
+    --tab-hover: fade(@accent-color, 80%);
+    --tab-color: @subtext0;
+    --nav-color: @text;
+    --widget-wrap-bg: @mantle;
+    --shine-start: @surface2;
+    --shine-end: @surface1;
+    --widget-bg: @surface0;
+    --light-bg: @surface0;
+    --medium-bg: @crust;
+    --toolbar-bg: @surface0;
+    --shine-highlight: @surface0;
+    --border-color-light: @surface0;
+    --site-border-color: @surface0;
+    --graphic-bg: @surface0;
+    --notice-bg: @overlay0;
+    --notice-color: @text;
+    --menu-disabled-color: @crust;
+    --control-bg: @accent-color;
+    --a-visited: @accent-color;
+    --nav-bar-border: none;
+    --feed-alt-bg: @surface1;
+    --nav-selected: @accent-color;
+
+    .tab_options > ul > li.currentpage,
+    .tab_options > ul > li.ui-state-active,
+    .tab_options > ul > li:hover {
+      border-bottom-color: @accent-color;
+    }
+
+    .site_btn_secondary {
+      color: @subtext1;
+      background: @surface1;
+      &:hover {
+        color: @accent-color;
+        background: fade(@surface1, 80%);
+      }
+    }
+
+    .site_btn,
+    .site_btn_alt,
+    #subscribe_full .site_btn,
+    .pagination p a.pagination_page,
+    .pagination p > span.pagination_page,
+    .vert_menu > ul > li:only-child > a.current_select,
+    .vert_menu > ul > li > a.current_select {
+      color: @base;
+      background: @accent-color;
+      &:not(:disabled, [data-disabled="disabled"]):hover {
+        background: fade(@accent-color, 80%);
+      }
+    }
+
+    #profile-bar #profile-actions .togglable.selected {
+      background: @accent-color;
+      color: @base;
+    }
+
+    .tipso_bubble .bottom {
+      background: @surface0 !important;
+    }
+
+    /* because the icons on the display mode buttons are white, we cant have white base here, so we improvise for latte */
+    & when (@lookup = latte) {
+      #display_modes a {
+        background: @text !important;
+        box-shadow: none !important;
+      }
+
+      /* fix nav menu dropdown icons */
+      .navbar_icon .dropdown {
+        --svozk: var(--s) -256px -326px !important;
+        background: var(--s) -256px -326px !important;
+      }
+
+      .content-actions li {
+        background: @surface0;
+
+        a,
+        .link,
+        .js_link,
+        .js_link_m {
+          color: @text;
+        }
+      }
+
+      .content-actions li .js_link:hover,
+      .content-actions li .js_link_m:hover,
+      .content-actions li .link:hover,
+      .content-actions li a:hover {
+        .material-icons {
+          color: @text !important;
+        }
+
+        color: @text !important;
+        background: @accent-color !important;
+      }
+
+      .content-actions li .material-icons {
+        color: @subtext0 !important;
+      }
+    }
+
+    & when not (@lookup = latte) {
+      #display_modes a {
+        background: @base !important;
+        box-shadow: none !important;
+      }
+    }
+
+    #display_modes a.selected,
+    #display_modes a:hover {
+      background: @accent-color;
+    }
+
+    .navigation-wrap .navmenu a {
+      text-shadow: none !important;
+    }
+
+    #header
+      #header-wrap
+      .header_text
+      > ul
+      > li
+      > .material-btn.mem_submit
+      .material-icons,
+    #header #header-wrap .header_text > ul > li > a.mem_submit .material-icons,
+    #mobileRightPanel
+      .sidr-inner
+      > ul
+      > li
+      > .material-btn.mem_submit
+      .material-icons,
+    #mobileRightPanel .sidr-inner > ul > li > a.mem_submit .material-icons {
+      color: @green !important;
+    }
+
+    #header
+      #header-wrap
+      .header_text
+      > ul
+      > li
+      > .material-btn[data-alert="1"].mem_notifications
+      .material-icons,
+    #header
+      #header-wrap
+      .header_text
+      > ul
+      > li
+      > .material-btn[data-alert="1"].mem_tickets
+      .material-icons,
+    #header
+      #header-wrap
+      .header_text
+      > ul
+      > li
+      > a[data-alert="1"].mem_notifications
+      .material-icons,
+    #header
+      #header-wrap
+      .header_text
+      > ul
+      > li
+      > a[data-alert="1"].mem_tickets
+      .material-icons,
+    #mobileRightPanel
+      .sidr-inner
+      > ul
+      > li
+      > .material-btn[data-alert="1"].mem_notifications
+      .material-icons,
+    #mobileRightPanel
+      .sidr-inner
+      > ul
+      > li
+      > .material-btn[data-alert="1"].mem_tickets
+      .material-icons,
+    #mobileRightPanel
+      .sidr-inner
+      > ul
+      > li
+      > a[data-alert="1"].mem_notifications
+      .material-icons,
+    #mobileRightPanel
+      .sidr-inner
+      > ul
+      > li
+      > a[data-alert="1"].mem_tickets
+      .material-icons {
+      color: @yellow;
+    }
+
+    .material-icons,
+    .mem_submit > span,
+    .mem_notifications > span {
+      color: @text !important;
+    }
+
+    .green {
+      background: @green;
+      color: @base;
+
+      .material-icons {
+        color: @base;
+      }
+    }
+
+    // .content-actions li:not(:only-child, :first-child) {
+    //   border-top: none;
+    // }
+
+    .tipso_content,
+    .member_profile_card_right {
+      background: @surface0;
+    }
+
+    .tipso_arrow {
+      border-color: @surface0;
+    }
+
+    #popular-reel .caption {
+      & when (@lookup = latte) {
+        background: fade(@text, 50%) !important;
+
+        .pop-title {
+          color: @base !important;
+          text-shadow: none;
+        }
+
+        .caption-subtitle {
+          color: @crust !important;
+          text-shadow: none;
+        }
+      }
+
+      & when not (@lookup = latte) {
+        background: fade(@base, 50%) !important;
+
+        .pop-title {
+          color: @text !important;
+          text-shadow: none;
+        }
+
+        .caption-subtitle {
+          color: @subtext0 !important;
+          text-shadow: none;
+        }
+
+        .content-actions li {
+          background: @surface0;
+
+          a,
+          .link,
+          .js_link,
+          .js_link_m {
+            color: @text;
+          }
+        }
+
+        .content-actions li .js_link:hover,
+        .content-actions li .js_link_m:hover,
+        .content-actions li .link:hover,
+        .content-actions li a:hover {
+          .material-icons {
+            color: @accent-color !important;
+          }
+          color: @accent-color !important;
+          background: @surface1 !important;
+        }
+
+        .content-actions li .material-icons {
+          color: @subtext0 !important;
+        }
+      }
+    }
+
+    #content_notice .site_btn,
+    #content_notice .site_btn_alt {
+      text-shadow: none;
+    }
+
+    .custom_input:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: @accent-color;
+    }
+  }
+}
+
+/* prettier-ignore */
+@paradisa: {
+  @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
+}
+
