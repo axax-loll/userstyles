@@ -14,14 +14,14 @@
 @var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
 
-@-moz-document domain('home-manager-options.extranix.com') {
-  @media (prefers-color-scheme: dark) {
+@-moz-document domain("home-manager-options.extranix.com") {
+@media (prefers-color-scheme: dark) {
     :root {
-      #catppuccin(@darkFlavor, @accentColor);
+      @paradisa(@darkFlavor, @accentColor);
     }
   }
 
-  #catppuccin(@lookup, @accent) {
+  @paradisa(@lookup, @accent) {
     @rosewater: @catppuccin[@@lookup][@rosewater];
     @flamingo: @catppuccin[@@lookup][@flamingo];
     @pink: @catppuccin[@@lookup][@pink];
@@ -50,7 +50,7 @@
     @crust: @catppuccin[@@lookup][@crust];
     @accent-color: @catppuccin[@@lookup][@@accent];
 
-    color-scheme: if(@lookup = latte, light, dark);
+    color-scheme: if(@lookup = light, dark);
 
     ::selection {
       background-color: fade(@accent-color, 30%);
@@ -182,6 +182,6 @@
 }
 
 /* prettier-ignore */
-@catppuccin: {
+@paradisa: {
   @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
 }
