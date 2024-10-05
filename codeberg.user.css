@@ -16,9 +16,6 @@
 
 @-moz-document domain('codeberg.org') {
   @import (css)
-    url("https://paradisa.github.io/gitea/theme-paradisa-@{lightFlavor}-@{accentColor}.css")
-    (prefers-color-scheme: light);
-  @import (css)
     url("https://paradisa.github.io/gitea/theme-paradisa-@{darkFlavor}-@{accentColor}.css")
     (prefers-color-scheme: dark);
 }
@@ -102,14 +99,6 @@
       a:hover {
         color: @blue !important;
       }
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    [data-theme="codeberg-dark"],
-    [data-theme="codeberg-light"],
-    [data-theme="codeberg-auto"] {
-      #paradisa(@lightFlavor, @accentColor);
     }
   }
 
