@@ -10,6 +10,7 @@
 @license MIT
 
 @preprocessor less
+@var select lightFlavor "Light Flavor" ["paradisa:paradisa"]
 @var select darkFlavor "Dark Flavor" ["paradisa:paradisa"]
 @var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
@@ -17,12 +18,18 @@
 @-moz-document regexp("https:\/\/(gist\.)*github\.com(?!((\/.+?\/.+?\/commit\/[A-Fa-f0-9]+\.(patch|diff)$)|\/home$|\/features($|\/.*)|\/marketplace($|\?.*|\/.*)|\/organizations\/plan)).*$") {
   [data-color-mode="auto"] {
     @media (prefers-color-scheme: light) {
+      &[data-light-theme="light"] {
+        #paradisa(@lightFlavor, @accentColor);
+      }
       &[data-light-theme="dark"] {
         #paradisa(@darkFlavor, @accentColor);
       }
     }
 
     @media (prefers-color-scheme: dark) {
+      &[data-dark-theme="light"] {
+        #paradisa(@lightFlavor, @accentColor);
+      }
       &[data-dark-theme="dark"] {
         #paradisa(@darkFlavor, @accentColor);
       }
@@ -31,6 +38,10 @@
   [data-color-mode="light"][data-light-theme="dark"],
   [data-color-mode="dark"][data-dark-theme="dark"] {
     #paradisa(@darkFlavor, @accentColor);
+  }
+  [data-color-mode="light"][data-light-theme="light"],
+  [data-color-mode="dark"][data-dark-theme="light"] {
+    #paradisa(@lightFlavor, @accentColor);
   }
 
   html:not([data-light-theme="light"], [data-light-theme="dark"])
@@ -79,7 +90,7 @@
     @crust: @paradisa[@@lookup][@crust];
     @accent-color: @paradisa[@@lookup][@@accent];
 
-    color-scheme: if(@lookup = paradisa, light, dark);
+    color-scheme: if(@lookup = latte, light, dark);
 
     ::selection {
       background-color: fade(@accent-color, 30%);
@@ -345,7 +356,7 @@
     --fgColor-default: @text;
     --fgColor-muted: @subtext1;
     --fgColor-onEmphasis: @base;
-    --fgColor-white: if(@lookup = paradisa, @crust, @text);
+    --fgColor-white: if(@lookup = latte, @crust, @text);
     --fgColor-disabled: @surface2;
     --fgColor-link: @accent-color;
     --fgColor-neutral: #6e7681;
@@ -410,14 +421,14 @@
     --borderColor-done-emphasis: @mauve;
     --borderColor-sponsors-muted: #db61a266;
     --borderColor-sponsors-emphasis: @pink;
-    & when (@lookup =paradisa) {
+    & when (@lookup =latte) {
       --color-ansi-black: @subtext1;
       --color-ansi-black-bright: @subtext0;
       --color-ansi-gray: @subtext0;
       --color-ansi-white: @surface2;
       --color-ansi-white-bright: @surface1;
     }
-    & when not (@lookup =paradisa) {
+    & when not (@lookup =latte) {
       --color-ansi-black: @surface1;
       --color-ansi-black-bright: @surface2;
       --color-ansi-gray: @surface2;
@@ -579,12 +590,18 @@
 {
   [data-color-mode="auto"] {
     @media (prefers-color-scheme: light) {
+      &[data-light-theme="light"] {
+        #paradisa(@lightFlavor, @accentColor);
+      }
       &[data-light-theme="dark"] {
         #paradisa(@darkFlavor, @accentColor);
       }
     }
 
     @media (prefers-color-scheme: dark) {
+      &[data-dark-theme="light"] {
+        #paradisa(@lightFlavor, @accentColor);
+      }
       &[data-dark-theme="dark"] {
         #paradisa(@darkFlavor, @accentColor);
       }
@@ -593,6 +610,10 @@
   [data-color-mode="light"][data-light-theme="dark"],
   [data-color-mode="dark"][data-dark-theme="dark"] {
     #paradisa(@darkFlavor, @accentColor);
+  }
+  [data-color-mode="light"][data-light-theme="light"],
+  [data-color-mode="dark"][data-dark-theme="light"] {
+    #paradisa(@lightFlavor, @accentColor);
   }
 
   #paradisa(@lookup, @accent) {
@@ -709,7 +730,7 @@
     @crust: @paradisa[@@lookup][@crust];
     @accent-color: @paradisa[@@lookup][@@accent];
 
-    color-scheme: if(@lookup = paradisa, light, dark);
+    color-scheme: if(@lookup = latte, light, dark);
 
     ::selection {
       background-color: fade(@accent-color, 30%);
@@ -825,5 +846,6 @@
 
 /* prettier-ignore */
 @paradisa: {
-  @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #424242 @surface1: #424242; @surface0: #424242; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
+  @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D  @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @text_filter: brightness(0) saturate(100%) invert(87%) sepia(6%) saturate(985%) hue-rotate(191deg) brightness(96%) contrast(99%); @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; @crust_filter: brightness(0) saturate(100%) invert(3%) sepia(12%) saturate(3951%) hue-rotate(206deg) brightness(96%) contrast(92%); };
 }
+
