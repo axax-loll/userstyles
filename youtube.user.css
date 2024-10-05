@@ -21,9 +21,6 @@
   :root[dark] {
     #catppuccin(@darkFlavor, @accentColor);
   }
-  :root:not([dark]) {
-    #catppuccin(@lightFlavor, @accentColor);
-  }
 
   #catppuccin(@lookup, @accent) {
     @rosewater: @catppuccin[@@lookup][@rosewater];
@@ -1106,9 +1103,6 @@
   :root[dark] {
     #catppuccin(@darkFlavor, @accentColor);
   }
-  :root {
-    #catppuccin(@lightFlavor, @accentColor);
-  }
 
   #catppuccin(@lookup, @accent) {
     @rosewater: @catppuccin[@@lookup][@rosewater];
@@ -1284,9 +1278,6 @@
 @-moz-document domain('m.youtube.com') {
   html[darker-dark-theme] {
     #catppuccin(@darkFlavor, @accentColor);
-  }
-  html {
-    #catppuccin(@lightFlavor, @accentColor);
   }
 
   #catppuccin(@lookup, @accent) {
