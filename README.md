@@ -2,7 +2,7 @@
 	<h1>【 STYLUS USERSTYLES 】</h1>
 </div>
 
-## Hi there, this is my userstyles for [Paradise](https://github.com/paradise-theme/paradise) color-scheme, mostly will be based on [catppucin](https://github.com/catppuccin/userstyles)
+## Hi there, this is my userstyles for [Paradise](https://github.com/paradise-theme/paradise) color-scheme, mostly will be based on [catppucin](https://github.com/catppuccin/userstyles), use [stylus](https://github.com/openstyles/stylus) for applying
 
 ![aye](https://github.com/axax-loll/userstyles/blob/main/scr/youtube.png?raw=true)
 
