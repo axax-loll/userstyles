@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name NixOS Search paradisa
-@namespace github.com/paradisa/userstyles/styles/nixos-search
-@homepageURL https://github.com/paradisa/userstyles/tree/main/styles/nixos-search
-@version 0.4.1
-@updateURL https://github.com/paradisa/userstyles/raw/main/styles/nixos-search/paradisa.user.css
-@supportURL https://github.com/paradisa/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anixos-search
-@description Soothing pastel theme for NixOS Search
+@name NixOS Wiki paradisa
+@namespace github.com/paradisa/userstyles/styles/nixos.wiki
+@homepageURL https://github.com/paradisa/userstyles/tree/main/styles/nixos.wiki
+@version 0.0.7
+@updateURL https://github.com/paradisa/userstyles/raw/main/styles/nixos.wiki/paradisa.user.css
+@supportURL https://github.com/paradisa/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Anixos.wiki
+@description Soothing pastel theme for NixOS Wiki
 @author paradisa
 @license MIT
 
@@ -14,7 +14,9 @@
 @var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
 
-@-moz-document domain("search.nixos.org") {
+@-moz-document domain('nixos.wiki') {
+  @import url("https://python.paradisa.com/pygments/paradisa-variables.important.css");
+
   @media (prefers-color-scheme: dark) {
     :root {
       #paradisa(@darkFlavor, @accentColor);
@@ -50,6 +52,33 @@
     @crust: @paradisa[@@lookup][@crust];
     @accent-color: @paradisa[@@lookup][@@accent];
 
+    --ctp-rosewater: @rosewater;
+    --ctp-flamingo: @flamingo;
+    --ctp-pink: @pink;
+    --ctp-mauve: @mauve;
+    --ctp-red: @red;
+    --ctp-maroon: @maroon;
+    --ctp-peach: @peach;
+    --ctp-yellow: @yellow;
+    --ctp-green: @green;
+    --ctp-teal: @teal;
+    --ctp-sky: @sky;
+    --ctp-sapphire: @sapphire;
+    --ctp-blue: @blue;
+    --ctp-lavender: @lavender;
+    --ctp-text: @text;
+    --ctp-subtext1: @subtext1;
+    --ctp-subtext0: @subtext0;
+    --ctp-overlay2: @overlay2;
+    --ctp-overlay1: @overlay1;
+    --ctp-overlay0: @overlay0;
+    --ctp-surface2: @surface2;
+    --ctp-surface1: @surface1;
+    --ctp-surface0: @surface0;
+    --ctp-base: @base;
+    --ctp-mantle: @mantle;
+    --ctp-crust: @crust;
+
     color-scheme: if(@lookup = latte, light, dark);
 
     ::selection {
@@ -63,50 +92,276 @@
       }
     }
 
-    --background-color: @base;
-    --badge-background: @accent-color;
-    --button-active-background: @surface1;
-    --button-active-hover-background: @surface2;
-    --button-background: @surface0;
-    --button-hover-background: @surface2;
-    --color-active-hover-tab: @surface1;
-    --color-active-tab: @surface0;
-    --color-hover-tab: @surface1;
-    --headerbar-background-color: @mantle;
-    --hover-background: @surface0;
-    --link-color: @accent-color;
-    --info-label-background: @accent-color;
-    --dark-blue: @accent-color;
-    --light-blue: @accent-color; // used by focus outline
-    --line-color: @surface0;
-    --search-result-short-details-color: @subtext1;
-    --search-result-divider-line-color: @surface0;
-    --search-result-title-color: @accent-color;
-    --search-sidebar-link-color: @text;
-    --search-sidebar-selected-link-background: @accent-color;
-    --search-sidebar-selected-link-color: @crust;
-    --terminal-background: @surface0;
-    --terminal-color: @red;
-    --text-color: @text;
-    --text-color-light: @text;
-    --text-color-warning: @yellow;
-
-    // hardcoded to #fff
-    .label,
-    .badge {
+    &[data-darkreader-scheme="dark"] body::before {
+      content: "Please turn off DarkReader for this domain when paradisa for NixOS Wiki is active.";
+      background: @red;
+      box-shadow:
+        0 4px 16px fade(@crust, 10%),
+        0 8px 32px fade(@crust, 5%);
       color: @crust;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 99999;
+      max-width: 24rem;
+      padding: 0.75rem;
+      margin: 0.5rem;
+      border-radius: 5px;
     }
 
-    // hardcoded to #005580
-    a:hover,
-    a:focus {
+    body {
+      background-color: @base;
+    }
+    hr {
+      border-color: @surface2;
+    }
+    .navbar-default {
       color: @text;
+      background-color: @mantle !important;
+      background-image: none !important;
+      border-color: transparent !important;
+
+      .navbar-brand {
+        color: @blue;
+        &:hover {
+          color: @sky;
+        }
+      }
+
+      li {
+        a {
+          color: @text !important;
+          &:hover {
+            color: @subtext0 !important;
+          }
+        }
+        &.nav.open > a,
+        ul {
+          background-color: @surface0 !important;
+          background-image: none !important;
+          a:hover {
+            background-color: fade(@surface1, 50%) !important;
+            background-image: none !important;
+          }
+        }
+      }
+      .active > a {
+        color: @crust !important;
+        &:hover {
+          color: @base !important;
+        }
+        background: @blue !important;
+      }
+    }
+
+    .search-query.form-control {
+      color: @text;
+      background-color: @surface0;
+      border-color: @surface0;
+    }
+
+    * {
+      color: @text;
+    }
+
+    a {
+      color: @blue;
+      &:hover {
+        color: @sky;
+      }
+      &.new {
+        color: @red;
+        &:hover {
+          color: @maroon;
+        }
+      }
+    }
+
+    .panel {
+      background-color: @mantle;
+      border-color: @mantle;
+      .panel-heading {
+        color: @text;
+        background-color: @surface0 !important;
+        border-bottom-color: @surface2;
+        img {
+          & when not (@lookup = latte) {
+            filter: invert(100%);
+          }
+        }
+      }
+    }
+
+    .btn-primary {
+      color: @crust;
+      background-color: @blue !important;
+      background-image: none !important;
+      border-color: @crust !important;
+      &:hover {
+        color: @crust !important;
+        background-color: @sky !important;
+        background-image: none !important;
+      }
+    }
+
+    table {
+      &,
+      * {
+        color: @text;
+        border-color: @overlay0 !important;
+        background-color: @mantle;
+      }
+      th {
+        &,
+        * {
+          background-color: @surface0 !important;
+        }
+      }
+    }
+
+    blockquote,
+    cite {
+      border-left-color: @pink !important;
+    }
+
+    cite a {
+      color: @pink;
+      &:hover {
+        color: @rosewater;
+      }
+    }
+
+    pre,
+    code {
+      box-shadow: none !important;
+      background-color: @mantle;
+      border-color: @crust;
+    }
+    pre {
+      color: @text;
+    }
+    code {
+      color: @rosewater;
+    }
+
+    *[style*="background-color: #C1E5FF"] {
+      color: @text !important;
+      background-color: fade(@blue, 15%) !important;
+      border-color: @blue !important;
+    }
+
+    *[style*="background-color: #FFD0B7"] {
+      color: @text !important;
+      background-color: fade(@peach, 15%) !important;
+      border-color: @peach !important;
+    }
+
+    *[style*="background: #F6F6F6"] {
+      color: @text !important;
+      background-color: fade(@overlay0, 15%) !important;
+      border-color: @overlay0 !important;
+    }
+
+    .suggestions {
+      .suggestions-result {
+        background-color: @mantle;
+        &:hover {
+          background-color: mix(@base, @mantle, 50%);
+        }
+        color: @text;
+        .highlight {
+          color: @accent-color;
+        }
+      }
+      .suggestions-results {
+        border-color: @surface0 !important;
+      }
+      .suggestions-special {
+        border-color: @surface0 !important;
+        background-color: @mantle;
+        &:hover {
+          background-color: mix(@accent-color, @mantle, 15%);
+        }
+        .special-label {
+          color: @subtext0;
+        }
+        .special-query {
+          color: @text;
+        }
+      }
+    }
+
+    .toc {
+      li.active > a {
+        border-left-color: @accent-color !important;
+      }
+      ul.nav a:hover {
+        background: @accent-color !important;
+        &,
+        * {
+          color: @crust !important;
+        }
+      }
+    }
+
+    .page-header {
+      border-bottom-color: @overlay2;
+    }
+
+    #catlinks {
+      background-color: @mantle;
+      border-color: @mantle;
+    }
+
+    #footer {
+      background-color: @mantle;
+    }
+
+    .mw-search-profile-tabs {
+      background-color: @base !important;
+      border-color: @base !important;
+    }
+
+    .search-types .current a {
+      color: @text;
+    }
+
+    .oo-ui-inputWidget-input {
+      background-color: @overlay2 !important;
+      color: @base;
+    }
+
+    .oo-ui-buttonElement-button {
+      background-color: @mantle !important;
+      color: @base !important;
+      border-color: @mantle !important;
+    }
+
+    .oo-ui-labelElement-label {
+      background-color: @mantle !important;
+      color: @text !important;
+    }
+
+    .oo-ui-floatableElement-floatable,
+    .oo-ui-widget:hover {
+      background-color: @mantle !important;
+      color: @text !important;
+    }
+
+    & when (@lookup = latte) {
+      .oo-ui-inputWidget-input {
+        background-color: @base !important;
+        color: @text;
+      }
+      .oo-ui-buttonElement-button {
+        background-color: @mantle !important;
+      }
     }
   }
 }
 
 /* prettier-ignore */
 @paradisa: {
-  @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
+    @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
 }
 
