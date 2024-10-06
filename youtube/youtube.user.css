@@ -2,7 +2,7 @@
 @name Youtube paradisa
 @namespace github.com/axax-loll/userstyles/
 @homepageURL https://github.com/axax-loll/userstyles/tree/main
-@version 1.0.1
+@version 1.0.2
 @updateURL https://github.com/axax-loll/userstyles/tree/main/youtube/youtube.user.css
 @supportURL https://github.com/axax-loll/userstyles/tree/main
 @description Paradise for Youtube
@@ -52,12 +52,12 @@
     @accent-color: @paradisa[@@lookup][@@accent];
     @text-filter: @paradisa[@@lookup][@text_filter];
 
-    @white: if(@lookup = latte, @base, @text);
-    @black: if(@lookup = latte, @text, @base);
+    @white: if(@lookup =latte, @base, @text);
+    @black: if(@lookup =latte, @text, @base);
 
     color: @text;
     background: @base !important;
-    color-scheme: if(@lookup = latte, light, dark);
+    color-scheme: if(@lookup =latte, light, dark);
 
     ::selection {
       background-color: fade(@accent-color, 30%);
@@ -164,23 +164,15 @@
       --yt-spec-static-overlay-background-solid: @crust !important;
       --yt-spec-static-overlay-background-heavy: @crust;
       --yt-spec-static-overlay-background-medium: fade(@crust, 50%) !important;
-      --yt-spec-static-overlay-background-medium-light: fadeout(
-        @crust,
-        0.3
-      ) !important;
-      --yt-spec-static-overlay-background-light: fadeout(
-        @crust,
-        0.1
-      ) !important;
+      --yt-spec-static-overlay-background-medium-light: fadeout(@crust,
+          0.3) !important;
+      --yt-spec-static-overlay-background-light: fadeout(@crust,
+          0.1) !important;
       --yt-spec-static-overlay-text-primary: @text !important;
-      --yt-spec-static-overlay-text-secondary: fadeout(
-        @grey,
-        0.7
-      ) !important;
-      --yt-spec-static-overlay-text-disabled: fadeout(
-        @grey,
-        0.3
-      ) !important;
+      --yt-spec-static-overlay-text-secondary: fadeout(@grey,
+          0.7) !important;
+      --yt-spec-static-overlay-text-disabled: fadeout(@grey,
+          0.3) !important;
       --yt-spec-static-overlay-call-to-action: @accent-color !important;
       --yt-spec-static-overlay-icon-active-other: @text !important;
       --yt-spec-static-overlay-icon-inactive: @surface1 !important;
@@ -203,19 +195,15 @@
       --yt-spec-10-percent-layer: @surface1 !important;
       --yt-spec-snackbar-background: @mantle !important;
       --yt-spec-snackbar-background-updated: @mantle !important;
-      --yt-spec-badge-chip-background: if(
-        @lookup =latte,
-        @crust,
-        @surface0
-      ) !important;
+      --yt-spec-badge-chip-background: if(@lookup =latte,
+          @crust,
+          @surface0 ) !important;
       --yt-spec-verified-badge-background: @overlay0 !important;
       --yt-spec-call-to-action-fadeoutd: fadeout(@sapphire, 0.3) !important;
       --yt-spec-call-to-action-hover: @accent-color !important;
       --yt-spec-brand-button-background-hover: @accent-color !important;
-      --yt-spec-brand-link-text-fadeoutd: fadeout(
-        @accent-color,
-        0.3
-      ) !important;
+      --yt-spec-brand-link-text-fadeoutd: fadeout(@accent-color,
+          0.3) !important;
       --yt-spec-filled-button-focus-outline: @surface0 !important;
       --yt-spec-static-overlay-button-hover: @surface1 !important;
       --yt-spec-mono-filled-hover: @surface1 !important;
@@ -275,10 +263,8 @@
       --yt-live-chat-overlay-color: fadeout(@mantle, 0.5);
       --yt-live-chat-dialog-background-color: @base !important;
       --yt-emoji-picker-variant-selector-bg-color: @base !important;
-      --yt-live-chat-moderation-mode-hover-background-color: fadeout(
-        @mantle,
-        0.3
-      ) !important;
+      --yt-live-chat-moderation-mode-hover-background-color: fadeout(@mantle,
+          0.3) !important;
       --yt-grey: @grey !important;
       --yt-live-chat-text-input-field-suggestion-background-color: @grey !important;
       --yt-live-chat-text-input-field-suggestion-background-color-hover: @subtext1 !important;
@@ -288,40 +274,26 @@
       --yt-live-chat-slider-active-color: @accent-color !important;
       --yt-live-chat-slider-container-color: @surface0 !important;
       --yt-live-chat-slider-markers-color: @text !important;
-      --yt-live-chat-banner-gradient-scrim: linear-gradient(
-        @mantle,
-        transparent
-      ) !important;
-      --yt-live-chat-action-panel-gradient-scrim: linear-gradient(
-        to top,
-        @mantle,
-        transparent
-      ) !important;
-      --yt-live-chat-automod-button-background-color-hover: fadeout(
-        @crust,
-        0.5
-      ) !important;
-      --yt-live-chat-automod-button-explanation-color: fadeout(
-        @accent-color,
-        0.7
-      ) !important;
+      --yt-live-chat-banner-gradient-scrim: linear-gradient(@mantle,
+          transparent) !important;
+      --yt-live-chat-action-panel-gradient-scrim: linear-gradient(to top,
+          @mantle,
+          transparent) !important;
+      --yt-live-chat-automod-button-background-color-hover: fadeout(@crust,
+          0.5) !important;
+      --yt-live-chat-automod-button-explanation-color: fadeout(@accent-color,
+          0.7) !important;
       --yt-live-chat-shimmer-background-color: fadeout(@crust, 0.4) !important;
-      --yt-live-chat-shimmer-linear-gradient: linear-gradient(
-        0deg,
-        fadeout(@text, 0.1) 40%,
-        fadeout(@base, 0.3) 50%,
-        fadeout(@text, 0.1) 60%
-      ) !important;
+      --yt-live-chat-shimmer-linear-gradient: linear-gradient(0deg,
+          fadeout(@text, 0.1) 40%,
+          fadeout(@base, 0.3) 50%,
+          fadeout(@text, 0.1) 60%) !important;
       --yt-live-chat-vem-background-color: @mantle !important;
       --yt-live-chat-product-picker-icon-color: fadeout(@text, 0.5) !important;
       --yt-live-chat-product-picker-hover-color: @overlay0 !important;
-      --yt-live-chat-product-picker-disabled-icon-color: fadeout(
-        @text,
-        0.3
-      ) !important;
-      --yt-live-chat-action-panel-background-color-transparent: (
-        null
-      ) !important;
+      --yt-live-chat-product-picker-disabled-icon-color: fadeout(@text,
+          0.3) !important;
+      --yt-live-chat-action-panel-background-color-transparent: (null) !important;
 
       --paper-tooltip-background: @overlay0 !important;
       --paper-tooltip-text-color: @text !important;
@@ -368,7 +340,8 @@
 
     /* Misc */
 
-    & when (@logo = 0) {
+    & when (@logo =0) {
+
       ytd-topbar-logo-renderer,
       svg.ytd-consent-bump-v2-lightbox {
         display: none;
@@ -401,8 +374,7 @@
       --yt-active-playlist-panel-background-color: @surface0 !important;
     }
 
-    ytd-playlist-panel-renderer[collapsible][collapsed][use-color-palette]
-      .header.ytd-playlist-panel-renderer {
+    ytd-playlist-panel-renderer[collapsible][collapsed][use-color-palette] .header.ytd-playlist-panel-renderer {
       --iron-icon-fill-color: @text !important;
       background-color: @base !important;
     }
@@ -415,8 +387,7 @@
       --yt-frosted-glass-desktop: @base !important;
     }
 
-    ytd-feed-filter-chip-bar-renderer[expand-instead-of-scroll]
-      #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
+    ytd-feed-filter-chip-bar-renderer[expand-instead-of-scroll] #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
       --iron-icon-fill-color: @text !important;
       background-color: @base !important;
     }
@@ -425,10 +396,11 @@
       background: #000000 !important;
     }
 
-    .ytp-progress-list when not(@lookup = latte) {
+    .ytp-progress-list when not(@lookup =latte) {
       background: fade(@surface0, 80%);
     }
-    .ytp-load-progress when not(@lookup = latte) {
+
+    .ytp-load-progress when not(@lookup =latte) {
       background: fade(@overlay0, 100%);
     }
 
@@ -458,9 +430,7 @@
       }
     }
 
-    ytd-author-comment-badge-renderer:not(
-        [style*="--ytd-author-comment-badge-icon-background-color: transparent;"]
-      ) {
+    ytd-author-comment-badge-renderer:not([style*="--ytd-author-comment-badge-icon-background-color: transparent;"]) {
       --yt-basic-background-color: @surface0 !important;
       --yt-basic-foreground-title-color: @surface0 !important;
       --ytd-author-comment-badge-background-color: @surface0 !important;
@@ -511,12 +481,11 @@
     }
 
     [fill="white"] {
-      fill: if(@lookup = latte, @base, @text) !important;
+      fill: if(@lookup =latte, @base, @text) !important;
     }
 
     /* verification badge */
-    [src*="https://www.gstatic.com/images/icons/material/system/1x/check_circle_grey600_36dp.png"]
-    {
+    [src*="https://www.gstatic.com/images/icons/material/system/1x/check_circle_grey600_36dp.png"] {
       filter: @text-filter;
     }
 
@@ -525,6 +494,7 @@
     }
 
     .yt-spec-icon-shape {
+
       [fill="#FAFAFA"],
       [fill="#000"],
       [fill="#fff"],
@@ -539,8 +509,7 @@
       color: @text;
     }
 
-    .yt-spec-icon-badge-shape--type-notification
-      .yt-spec-icon-badge-shape__badge {
+    .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge {
       background-color: @accent-color !important;
       color: @surface0 !important;
     }
@@ -568,7 +537,7 @@
           g path[fill] {
             fill: @accent-color !important;
 
-            + [stroke] {
+            +[stroke] {
               stroke: @accent-color !important;
             }
           }
@@ -617,6 +586,7 @@
     }
 
     .yt-spec-button-shape-next--overlay {
+
       &.yt-spec-button-shape-next--tonal,
       &.yt-spec-button-shape-next--text {
         color: @text;
@@ -671,20 +641,25 @@
     .sbsb_a {
       background: var(--yt-spec-raised-background);
     }
+
     .sbdd_b {
       border-color: var(--yt-spec-raised-background);
       background-color: var(--yt-spec-raised-background);
     }
+
     .sbpqs_a,
     .gsfs {
       color: var(--yt-spec-text-primary);
     }
+
     .sbsb_i {
       color: var(--yt-spec-call-to-action);
     }
+
     .sbsb_d {
       background-color: var(--yt-spec-additive-background);
     }
+
     .sbdd_c {
       visibility: hidden;
     }
@@ -696,9 +671,8 @@
 
     .sbpqs_a::before,
     .sbqs_c::before {
-      @svg: escape(
-        '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="1 1 27 27" width="24" focusable="false" style="width:100%;height:100%" pointer-events="none" display="block"><path fill="@{text}" d="m20.87 20.17-5.59-5.59A6.96 6.96 0 0 0 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7a6.995 6.995 0 0 0 11.58 5.29l5.59 5.59zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6"/></svg>'
-      );
+      @svg: escape('<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="1 1 27 27" width="24" focusable="false" style="width:100%;height:100%" pointer-events="none" display="block"><path fill="@{text}" d="m20.87 20.17-5.59-5.59A6.96 6.96 0 0 0 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7a6.995 6.995 0 0 0 11.58 5.29l5.59 5.59zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6"/></svg>'
+        );
       content: url("data:image/svg+xml,@{svg}");
       background: none;
     }
@@ -706,6 +680,7 @@
     /* Video description */
 
     #description {
+
       [style*="color: rgb(255, 255, 255);"],
       [style*="color: rgb(19, 19, 19);"] {
         color: @text !important;
@@ -739,6 +714,7 @@
       background: @accent-color;
       color: @crust;
     }
+
     #thumbnail [style="background-color: rgba(51, 51, 51, 0.8);"],
     .YtInlinePlayerControlsTopRightControlsCircleButton,
     .badge-shape-wiz--default.badge-shape-wiz--overlay,
@@ -746,17 +722,21 @@
       background-color: @surface0 !important;
       color: @text;
     }
+
     .ytp-sb-unsubscribe {
       background-color: @surface2;
       color: @text;
     }
+
     .ytp-sb-subscribe {
       background-color: @accent-color;
       color: @crust;
     }
+
     ytd-thumbnail-overlay-resume-playback-renderer {
       background-color: @surface1;
     }
+
     .badge-shape-wiz--thumbnail-default {
       color: @text;
       background: fade(@crust, 80%);
@@ -796,9 +776,8 @@
     }
 
     .ytp-panel-back-button {
-      @svg: escape(
-        '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" version="1.1"><path d="m19.41 20.09-4.58-4.59 4.58-4.59L18 9.5l-6 6 6 6z" fill="@{text}"/></svg>'
-      );
+      @svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" version="1.1"><path d="m19.41 20.09-4.58-4.59 4.58-4.59L18 9.5l-6 6 6 6z" fill="@{text}"/></svg>'
+        );
       background-image: url("data:image/svg+xml,@{svg}");
     }
 
@@ -809,6 +788,7 @@
         background-color: @grey;
       }
     }
+
     .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
       background: @accent-color;
     }
@@ -818,20 +798,19 @@
         background-color: @surface1;
       }
 
-      svg > path:not([fill="none"]) {
+      svg>path:not([fill="none"]) {
         fill: @text !important;
       }
 
       &[aria-haspopup="true"] .ytp-menuitem-content {
-        @svg: escape(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" version="1.1"><path d="m12.59 20.34 4.58-4.59-4.58-4.59L14 9.75l6 6-6 6z" fill="@{text}"/></svg>'
-        );
+        @svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" version="1.1"><path d="m12.59 20.34 4.58-4.59-4.58-4.59L14 9.75l6 6-6 6z" fill="@{text}"/></svg>'
+          );
         background-image: url("data:image/svg+xml,@{svg}");
       }
+
       &[role="menuitemradio"][aria-checked="true"] .ytp-menuitem-label {
-        @svg: escape(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" version="1.1"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" fill="@{text}"/></svg>'
-        );
+        @svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" version="1.1"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" fill="@{text}"/></svg>'
+          );
         background-image: url("data:image/svg+xml,@{svg}");
       }
     }
@@ -843,16 +822,19 @@
         use {
           fill: @black;
         }
+
         path {
           fill: @white;
         }
       }
     }
+
     .ytp-cards-teaser {
       .ytp-cards-teaser-box {
         background-color: @surface2;
         border-bottom-color: @surface2;
       }
+
       .ytp-cards-teaser-text {
         color: @text;
       }
@@ -872,10 +854,12 @@
       }
 
       .ytp-volume-slider-handle {
+
         &,
         &::before {
           background-color: @white;
         }
+
         &::after {
           background-color: fade(@white, 20%);
         }
@@ -891,6 +875,7 @@
         &[disabled]::before {
           background: @accent-color;
         }
+
         &::before {
           background: @overlay0;
         }
@@ -910,28 +895,24 @@
       }
 
       .ytp-autonav-toggle-button {
-        @svg: escape(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" fill="none"><path opacity=".5" fill-rule="evenodd" clip-rule="evenodd" d="M22.7 11c2.95 0 5.3-2.21 5.3-5s-2.35-5-5.3-5H7.3C4.35 1 2 3.21 2 6s2.35 5 5.3 5z" fill="@{white}"/><path opacity=".5" fill-rule="evenodd" clip-rule="evenodd" d="M7.3 1C4.35 1 2 3.21 2 6s2.35 5 5.3 5h15.4A5.16 5.16 0 0 0 28 6l-.03-.54A5.16 5.16 0 0 0 22.7 1zm15.4 11c3.45 0 6.3-2.6 6.3-6s-2.85-6-6.3-6H7.3C3.85 0 1 2.6 1 6s2.85 6 6.3 6z" fill="@{black}" fill-opacity=".3"/></svg>'
-        );
+        @svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" fill="none"><path opacity=".5" fill-rule="evenodd" clip-rule="evenodd" d="M22.7 11c2.95 0 5.3-2.21 5.3-5s-2.35-5-5.3-5H7.3C4.35 1 2 3.21 2 6s2.35 5 5.3 5z" fill="@{white}"/><path opacity=".5" fill-rule="evenodd" clip-rule="evenodd" d="M7.3 1C4.35 1 2 3.21 2 6s2.35 5 5.3 5h15.4A5.16 5.16 0 0 0 28 6l-.03-.54A5.16 5.16 0 0 0 22.7 1zm15.4 11c3.45 0 6.3-2.6 6.3-6s-2.85-6-6.3-6H7.3C3.85 0 1 2.6 1 6s2.85 6 6.3 6z" fill="@{black}" fill-opacity=".3"/></svg>'
+          );
         background-image: url("data:image/svg+xml;charset=utf-8,@{svg}");
 
         &::after {
-          @svg: escape(
-            '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 17 17" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 16a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15" fill="@{surface2}"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17 8.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0m-1 0a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0" fill="@{black}" fill-opacity=".15"/><path d="M5.5 12h2V5h-2zm4-7v7h2V5z" fill="@{white}"/></svg>'
-          );
+          @svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 17 17" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 16a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15" fill="@{surface2}"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17 8.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0m-1 0a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0" fill="@{black}" fill-opacity=".15"/><path d="M5.5 12h2V5h-2zm4-7v7h2V5z" fill="@{white}"/></svg>'
+            );
           background-image: url("data:image/svg+xml;charset=utf-8,@{svg}");
         }
 
         &[aria-checked="true"] {
-          @svg: escape(
-            '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" fill="none"><path opacity=".5" fill-rule="evenodd" clip-rule="evenodd" d="M22.7 11c2.95 0 5.3-2.21 5.3-5s-2.35-5-5.3-5H7.3C4.35 1 2 3.21 2 6s2.35 5 5.3 5zm-2.7-.75v-8.5l6.7 4.26z" fill="@{white}"/><path opacity=".5" fill-rule="evenodd" clip-rule="evenodd" d="M7.3 1C4.35 1 2 3.21 2 6s2.35 5 5.3 5h15.4A5.16 5.16 0 0 0 28 6l-.03-.54A5.16 5.16 0 0 0 22.7 1zm15.4 11c3.45 0 6.3-2.6 6.3-6s-2.85-6-6.3-6H7.3C3.85 0 1 2.6 1 6s2.85 6 6.3 6z" fill="@{black}" fill-opacity=".3"/></svg>'
-          );
+          @svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" fill="none"><path opacity=".5" fill-rule="evenodd" clip-rule="evenodd" d="M22.7 11c2.95 0 5.3-2.21 5.3-5s-2.35-5-5.3-5H7.3C4.35 1 2 3.21 2 6s2.35 5 5.3 5zm-2.7-.75v-8.5l6.7 4.26z" fill="@{white}"/><path opacity=".5" fill-rule="evenodd" clip-rule="evenodd" d="M7.3 1C4.35 1 2 3.21 2 6s2.35 5 5.3 5h15.4A5.16 5.16 0 0 0 28 6l-.03-.54A5.16 5.16 0 0 0 22.7 1zm15.4 11c3.45 0 6.3-2.6 6.3-6s-2.85-6-6.3-6H7.3C3.85 0 1 2.6 1 6s2.85 6 6.3 6z" fill="@{black}" fill-opacity=".3"/></svg>'
+            );
           background-image: url("data:image/svg+xml;charset=utf-8,@{svg}");
 
           &::after {
-            @svg: escape(
-              '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 17 17" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17 8.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0m-5 0L6.5 5v7zm-1.86 0L7.5 6.82v3.36zM8.5 16a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15" fill="@{black}" fill-opacity=".15"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0m-4 0L6.5 12V5z" fill="@{white}"/></svg>'
-            );
+            @svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 17 17" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M17 8.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0m-5 0L6.5 5v7zm-1.86 0L7.5 6.82v3.36zM8.5 16a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15" fill="@{black}" fill-opacity=".15"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0m-4 0L6.5 12V5z" fill="@{white}"/></svg>'
+              );
             background-image: url("data:image/svg+xml;charset=utf-8,@{svg}");
           }
         }
@@ -946,6 +927,7 @@
 
     #shorts-container {
       --yt-spec-static-overlay-text-primary: @white;
+
       .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal {
         color: @white;
       }
@@ -953,6 +935,7 @@
       .YtwFactoidRendererLabel {
         color: @grey;
       }
+
       .YtwFactoidRendererValue {
         color: @text;
       }
@@ -962,8 +945,8 @@
           color: @subtext1;
         }
       }
-      ytd-reel-video-renderer[is-watch-while-mode]
-        .yt-spec-button-shape-with-label__label {
+
+      ytd-reel-video-renderer[is-watch-while-mode] .yt-spec-button-shape-with-label__label {
         color: @white;
       }
 
@@ -1002,6 +985,7 @@
     .ShortsLockupViewModelHostOutsideMetadataEndpoint {
       color: @text;
     }
+
     .ShortsLockupViewModelHostOutsideMetadataSubhead {
       color: @subtext1;
     }
@@ -1033,24 +1017,30 @@
     .yt-tab-shape-wiz__tab {
       color: @subtext1;
     }
+
     .yt-tab-shape-wiz__tab--tab-selected {
       color: @text;
     }
+
     .yt-tab-group-shape-wiz__slider {
       background-color: @text;
     }
+
     .yt-tab-shape-wiz:hover .yt-tab-shape-wiz__tab-bar {
       background-color: @subtext1;
     }
+
     .truncated-text-wiz,
     .page-header-view-model-wiz__page-header-content-metadata {
       color: @subtext1;
     }
+
     .page-header-view-model-wiz__page-header-title,
     [style="color: rgb(255, 255, 255);"]:has(svg),
     .truncated-text-wiz__absolute-button {
       color: @text !important;
     }
+
     .yt-contextual-sheet-layout-wiz {
       background-color: @mantle;
 
@@ -1082,12 +1072,14 @@
     .yt-profile-card-view-model-wiz {
       background-color: @mantle;
     }
+
     .yt-profile-identity-info-view-model-wiz__channel-name,
     .yt-profile-info-view-model-wiz__section-title,
     .yt-comment-interaction-view-model-wiz__video-title,
     .yt-shared-subscription-view-model-wiz__channel-name {
       color: @text;
     }
+
     .yt-profile-identity-info-view-model-wiz__badge,
     .yt-profile-identity-info-view-model-wiz__metadata-handle,
     .yt-profile-identity-info-view-model-wiz__metadata-content,
@@ -1098,8 +1090,7 @@
   }
 }
 
-@-moz-document url-prefix('https://studio.youtube.com')
-{
+@-moz-document url-prefix('https://studio.youtube.com') {
   :root[dark] {
     #paradisa(@darkFlavor, @accentColor);
   }
@@ -1133,7 +1124,7 @@
     @crust: @paradisa[@@lookup][@crust];
     @accent-color: @paradisa[@@lookup][@@accent];
 
-    color-scheme: if(@lookup = latte, light, dark);
+    color-scheme: if(@lookup =latte, light, dark);
 
     ::selection {
       background-color: fade(@accent-color, 30%);
@@ -1146,11 +1137,9 @@
       }
     }
 
-    [src="https://www.gstatic.com/youtube/img/creator/yt_studio_logo_white.svg"]
-    {
-      @svg: escape(
-        '<svg viewBox="0 0 97.55 24" xmlns="http://www.w3.org/2000/svg"><path fill="@{accent-color}" d="M17.1 0S6.4 0 3.8.7a4.15 4.15 0 0 0-3 3C0 6.4 0 12 0 12a45 45 0 0 0 .7 8.2 4.32 4.32 0 0 0 3 3c2.7.8 13.4.8 13.4.8s10.7 0 13.4-.7a4.32 4.32 0 0 0 3-3 45 45 0 0 0 .7-8.2s.1-5.7-.6-8.3a4.32 4.32 0 0 0-3-3C27.9 0 17.1 0 17.1 0m-3.4 6.9 8.9 5.1-8.9 5.1z"/><path fill="@{text}" d="M76.3.9v4.4c0 1.1 0 2 .1 3.3h-.1A3.36 3.36 0 0 0 73.4 7c-2.3 0-3.3 2-3.3 6.6V16c0 4.9.8 6.6 3.2 6.6a3.42 3.42 0 0 0 3.2-2.4h.1l.4 2.1h2.6V.9zm6.688.4c-1.126.032-1.687.55-1.687 2.1 0 1.7.599 2.1 1.799 2.1s1.8-.5 1.8-2.1-.6-2.1-1.8-2.1zM45 1.4c-3.6 0-5 1.7-5 4.9s1.1 4.5 3.7 6.8c1.6 1.4 2.8 2.5 2.8 4.8 0 1.5-.4 2.2-1.6 2.2s-1.7-.8-1.6-3.6h-3.1c-.6 4.2.8 6.1 4.5 6.2 3.5 0 5-1.5 5-5.4 0-3.1-1.3-4.4-3.7-6.6-1.9-1.8-2.8-2.5-2.8-4.6 0-1.4.3-2.2 1.6-2.2s1.6 1.1 1.5 3.9l3.1-.2c.5-4.2-.8-6.2-4.4-6.2m7.6 1.4-.4 4.5h-1.4v2.6H52v8.8c0 2.7.4 3.8 2.6 3.8a7.4 7.4 0 0 0 3.1-.6l-.6-2.2a5.2 5.2 0 0 1-1.3.2c-.5 0-.7-.3-.7-1.7V9.9h2.2V7.3H55V2.8zM91 7c-3.3 0-4.7 1.8-4.7 6.7v2.2c0 4.7 1.1 6.7 4.6 6.7s4.7-2 4.7-6.7v-2.2C95.6 8.9 94.3 7 91 7m-31.8.3v11.4c0 2.7.9 4 2.9 4a3.46 3.46 0 0 0 3.2-2.1h.1l.3 1.8h2.7V7.3H65v12a1.51 1.51 0 0 1-1.4 1c-.7 0-1-.6-1-1.9V7.3zm22.3 0v15.1h3.2V7.3zm9.4 2c1 0 1.3 1 1.3 3.1v4.7c0 2.2-.4 3.1-1.3 3.1s-1.2-.9-1.2-3.1v-4.7c0-2 .2-3.1 1.2-3.1M75 9.4a1.56 1.56 0 0 1 1.3.8v8.5c-.2.9-.9 1.4-1.4 1.3-1 0-1.3-1-1.3-4.4v-1.9c0-3.3.3-4.3 1.4-4.3"/></svg>'
-      );
+    [src="https://www.gstatic.com/youtube/img/creator/yt_studio_logo_white.svg"] {
+      @svg: escape('<svg viewBox="0 0 97.55 24" xmlns="http://www.w3.org/2000/svg"><path fill="@{accent-color}" d="M17.1 0S6.4 0 3.8.7a4.15 4.15 0 0 0-3 3C0 6.4 0 12 0 12a45 45 0 0 0 .7 8.2 4.32 4.32 0 0 0 3 3c2.7.8 13.4.8 13.4.8s10.7 0 13.4-.7a4.32 4.32 0 0 0 3-3 45 45 0 0 0 .7-8.2s.1-5.7-.6-8.3a4.32 4.32 0 0 0-3-3C27.9 0 17.1 0 17.1 0m-3.4 6.9 8.9 5.1-8.9 5.1z"/><path fill="@{text}" d="M76.3.9v4.4c0 1.1 0 2 .1 3.3h-.1A3.36 3.36 0 0 0 73.4 7c-2.3 0-3.3 2-3.3 6.6V16c0 4.9.8 6.6 3.2 6.6a3.42 3.42 0 0 0 3.2-2.4h.1l.4 2.1h2.6V.9zm6.688.4c-1.126.032-1.687.55-1.687 2.1 0 1.7.599 2.1 1.799 2.1s1.8-.5 1.8-2.1-.6-2.1-1.8-2.1zM45 1.4c-3.6 0-5 1.7-5 4.9s1.1 4.5 3.7 6.8c1.6 1.4 2.8 2.5 2.8 4.8 0 1.5-.4 2.2-1.6 2.2s-1.7-.8-1.6-3.6h-3.1c-.6 4.2.8 6.1 4.5 6.2 3.5 0 5-1.5 5-5.4 0-3.1-1.3-4.4-3.7-6.6-1.9-1.8-2.8-2.5-2.8-4.6 0-1.4.3-2.2 1.6-2.2s1.6 1.1 1.5 3.9l3.1-.2c.5-4.2-.8-6.2-4.4-6.2m7.6 1.4-.4 4.5h-1.4v2.6H52v8.8c0 2.7.4 3.8 2.6 3.8a7.4 7.4 0 0 0 3.1-.6l-.6-2.2a5.2 5.2 0 0 1-1.3.2c-.5 0-.7-.3-.7-1.7V9.9h2.2V7.3H55V2.8zM91 7c-3.3 0-4.7 1.8-4.7 6.7v2.2c0 4.7 1.1 6.7 4.6 6.7s4.7-2 4.7-6.7v-2.2C95.6 8.9 94.3 7 91 7m-31.8.3v11.4c0 2.7.9 4 2.9 4a3.46 3.46 0 0 0 3.2-2.1h.1l.3 1.8h2.7V7.3H65v12a1.51 1.51 0 0 1-1.4 1c-.7 0-1-.6-1-1.9V7.3zm22.3 0v15.1h3.2V7.3zm9.4 2c1 0 1.3 1 1.3 3.1v4.7c0 2.2-.4 3.1-1.3 3.1s-1.2-.9-1.2-3.1v-4.7c0-2 .2-3.1 1.2-3.1M75 9.4a1.56 1.56 0 0 1 1.3.8v8.5c-.2.9-.9 1.4-1.4 1.3-1 0-1.3-1-1.3-4.4v-1.9c0-3.3.3-4.3 1.4-4.3"/></svg>'
+        );
       content: url("data:image/svg+xml,@{svg}");
     }
 
@@ -1382,12 +1371,11 @@
       }
     }
 
-    .yt-spec-touch-feedback-shape--overlay-touch-response-inverse
-      .yt-spec-touch-feedback-shape__fill {
+    .yt-spec-touch-feedback-shape--overlay-touch-response-inverse .yt-spec-touch-feedback-shape__fill {
       background-color: @accent-color;
     }
-    .yt-spec-touch-feedback-shape--overlay-touch-response
-      .yt-spec-touch-feedback-shape__fill {
+
+    .yt-spec-touch-feedback-shape--overlay-touch-response .yt-spec-touch-feedback-shape__fill {
       background-color: @text;
     }
   }
@@ -1395,6 +1383,35 @@
 
 /* prettier-ignore */
 @paradisa: {
-  @paradisa:    { @pony: #BBB6B6; @flaminga: #A988B0; @pink: #A988B0; @purple: #A988B0; @red: #B66467; @oranga: #B66467; @ogran: #B66467; @yellow: #D9BC8C; @green: #8C977D; @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @text_filter: brightness(0) saturate(100%) invert(80%) sepia(11%) saturate(726%) hue-rotate(192deg) brightness(104%) contrast(92%); @subtext1: #BBB6B6; @grey: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
-}
+  @paradisa: {
+    @pony: #BBB6B6;
+    @flaminga: #A988B0;
+    @pink: #A988B0;
+    @purple: #A988B0;
+    @red: #B66467;
+    @oranga: #B66467;
+    @ogran: #B66467;
+    @yellow: #D9BC8C;
+    @green: #8C977D;
+    @teal: #8AA6A2;
+    @sky: #8AA6A2;
+    @sapphire: #8DA3B9;
+    @blue: #8DA3B9;
+    @lavender: #8DA3B9;
+    @text: #E8E3E3;
+    @text_filter: brightness(0) saturate(100%) invert(80%) sepia(11%) saturate(726%) hue-rotate(192deg) brightness(104%) contrast(92%);
+    @subtext1: #BBB6B6;
+    @grey: #BBB6B6;
+    @overlay2: #BBB6B6;
+    @overlay1: #424242;
+    @overlay0: #424242;
+    @surface2: #2E2E2E;
+    @surface1: #2E2E2E;
+    @surface0: #2E2E2E;
+    @base: #151515;
+    @mantle: #1F1F1F;
+    @crust: #1F1F1F;
+  }
 
+  ;
+}
