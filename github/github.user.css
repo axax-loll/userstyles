@@ -1,23 +1,35 @@
 /* ==UserStyle==
-@name Github paradisa
-@namespace github.com/axax-loll/userstyles/
-@homepageURL https://github.com/axax-loll/userstyles/tree/main
-@version 1.0.1
-@updateURL https://github.com/axax-loll/userstyles/tree/main/github/github.user.css
-@supportURL https://github.com/axax-loll/userstyles/tree/main
-@description Paradise for Github
-@author azikx
-@license MIT
+@name         GitHub paradisa
+@namespace    github.com/paradisa/userstyles/styles/github
+@homepageURL  https://github.com/paradisa/userstyles/tree/main/styles/github
+@version      1.7.6
+@updateURL    https://github.com/paradisa/userstyles/raw/main/styles/github/paradisa.user.css
+@supportURL   https://github.com/paradisa/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Agithub
+@description  Soothing pastel theme for GitHub
+@author       paradisa
+@license      MIT
 
 @preprocessor less
-@var select lightFlavor "Light Flavor" ["paradisa:paradisa"]
-@var select darkFlavor "Dark Flavor" ["paradisa:paradisa"]
+@var select lightFlavor "Light Flavor" ["paradisa:Para"]
+@var select darkFlavor "Dark Flavor" ["paradisa:Para"]
 @var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
 
 @-moz-document regexp("https:\/\/(gist\.)*github\.com(?!((\/.+?\/.+?\/commit\/[A-Fa-f0-9]+\.(patch|diff)$)|\/home$|\/features($|\/.*)|\/marketplace($|\?.*|\/.*)|\/organizations\/plan)).*$") {
   [data-color-mode="auto"] {
+    @media (prefers-color-scheme: light) {
+      &[data-light-theme="light"] {
+        #paradisa(@lightFlavor, @accentColor);
+      }
+      &[data-light-theme="dark"] {
+        #paradisa(@darkFlavor, @accentColor);
+      }
+    }
+
     @media (prefers-color-scheme: dark) {
+      &[data-dark-theme="light"] {
+        #paradisa(@lightFlavor, @accentColor);
+      }
       &[data-dark-theme="dark"] {
         #paradisa(@darkFlavor, @accentColor);
       }
@@ -26,6 +38,10 @@
   [data-color-mode="light"][data-light-theme="dark"],
   [data-color-mode="dark"][data-dark-theme="dark"] {
     #paradisa(@darkFlavor, @accentColor);
+  }
+  [data-color-mode="light"][data-light-theme="light"],
+  [data-color-mode="dark"][data-dark-theme="light"] {
+    #paradisa(@lightFlavor, @accentColor);
   }
 
   html:not([data-light-theme="light"], [data-light-theme="dark"])
@@ -573,7 +589,19 @@
 @-moz-document url-prefix("https://viewscreen.githubusercontent.com/markdown/mermaid")
 {
   [data-color-mode="auto"] {
+    @media (prefers-color-scheme: light) {
+      &[data-light-theme="light"] {
+        #paradisa(@lightFlavor, @accentColor);
+      }
+      &[data-light-theme="dark"] {
+        #paradisa(@darkFlavor, @accentColor);
+      }
+    }
+
     @media (prefers-color-scheme: dark) {
+      &[data-dark-theme="light"] {
+        #paradisa(@lightFlavor, @accentColor);
+      }
       &[data-dark-theme="dark"] {
         #paradisa(@darkFlavor, @accentColor);
       }
@@ -582,6 +610,10 @@
   [data-color-mode="light"][data-light-theme="dark"],
   [data-color-mode="dark"][data-dark-theme="dark"] {
     #paradisa(@darkFlavor, @accentColor);
+  }
+  [data-color-mode="light"][data-light-theme="light"],
+  [data-color-mode="dark"][data-dark-theme="light"] {
+    #paradisa(@lightFlavor, @accentColor);
   }
 
   #paradisa(@lookup, @accent) {
@@ -816,4 +848,3 @@
 @paradisa: {
   @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D  @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @text_filter: brightness(0) saturate(100%) invert(87%) sepia(6%) saturate(985%) hue-rotate(191deg) brightness(96%) contrast(99%); @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; @crust_filter: brightness(0) saturate(100%) invert(3%) sepia(12%) saturate(3951%) hue-rotate(206deg) brightness(96%) contrast(92%); };
 }
-
