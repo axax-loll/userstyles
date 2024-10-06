@@ -17,19 +17,7 @@
 
 @-moz-document regexp("https:\/\/(gist\.)*github\.com(?!((\/.+?\/.+?\/commit\/[A-Fa-f0-9]+\.(patch|diff)$)|\/home$|\/features($|\/.*)|\/marketplace($|\?.*|\/.*)|\/organizations\/plan)).*$") {
   [data-color-mode="auto"] {
-    @media (prefers-color-scheme: light) {
-      &[data-light-theme="light"] {
-        #paradisa(@lightFlavor, @accentColor);
-      }
-      &[data-light-theme="dark"] {
-        #paradisa(@darkFlavor, @accentColor);
-      }
-    }
-
     @media (prefers-color-scheme: dark) {
-      &[data-dark-theme="light"] {
-        #paradisa(@lightFlavor, @accentColor);
-      }
       &[data-dark-theme="dark"] {
         #paradisa(@darkFlavor, @accentColor);
       }
@@ -38,10 +26,6 @@
   [data-color-mode="light"][data-light-theme="dark"],
   [data-color-mode="dark"][data-dark-theme="dark"] {
     #paradisa(@darkFlavor, @accentColor);
-  }
-  [data-color-mode="light"][data-light-theme="light"],
-  [data-color-mode="dark"][data-dark-theme="light"] {
-    #paradisa(@lightFlavor, @accentColor);
   }
 
   html:not([data-light-theme="light"], [data-light-theme="dark"])
@@ -589,19 +573,7 @@
 @-moz-document url-prefix("https://viewscreen.githubusercontent.com/markdown/mermaid")
 {
   [data-color-mode="auto"] {
-    @media (prefers-color-scheme: light) {
-      &[data-light-theme="light"] {
-        #paradisa(@lightFlavor, @accentColor);
-      }
-      &[data-light-theme="dark"] {
-        #paradisa(@darkFlavor, @accentColor);
-      }
-    }
-
     @media (prefers-color-scheme: dark) {
-      &[data-dark-theme="light"] {
-        #paradisa(@lightFlavor, @accentColor);
-      }
       &[data-dark-theme="dark"] {
         #paradisa(@darkFlavor, @accentColor);
       }
@@ -610,10 +582,6 @@
   [data-color-mode="light"][data-light-theme="dark"],
   [data-color-mode="dark"][data-dark-theme="dark"] {
     #paradisa(@darkFlavor, @accentColor);
-  }
-  [data-color-mode="light"][data-light-theme="light"],
-  [data-color-mode="dark"][data-dark-theme="light"] {
-    #paradisa(@lightFlavor, @accentColor);
   }
 
   #paradisa(@lookup, @accent) {
