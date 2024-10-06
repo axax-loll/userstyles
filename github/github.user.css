@@ -1,17 +1,17 @@
 /* ==UserStyle==
-@name         GitHub paradais
-@namespace    github.com/paradais/userstyles/styles/github
-@homepageURL  https://github.com/paradais/userstyles/tree/main/styles/github
+@name         GitHub Catppuccin
+@namespace    github.com/catppuccin/userstyles/styles/github
+@homepageURL  https://github.com/catppuccin/userstyles/tree/main/styles/github
 @version      1.7.6
-@updateURL    https://github.com/paradais/userstyles/raw/main/styles/github/paradais.user.css
-@supportURL   https://github.com/paradais/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Agithub
+@updateURL    https://github.com/catppuccin/userstyles/raw/main/styles/github/catppuccin.user.css
+@supportURL   https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Agithub
 @description  Soothing pastel theme for GitHub
-@author       paradais
+@author       Catppuccin
 @license      MIT
 
 @preprocessor less
-@var select lightFlavor "Light Flavor" ["paradisa:paradisa*"]
-@var select darkFlavor "Dark Flavor" ["paradisa:paradisa"]
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
 @var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
 
@@ -19,29 +19,29 @@
   [data-color-mode="auto"] {
     @media (prefers-color-scheme: light) {
       &[data-light-theme="light"] {
-        #paradais(@lightFlavor, @accentColor);
+        #catppuccin(@lightFlavor, @accentColor);
       }
       &[data-light-theme="dark"] {
-        #paradais(@darkFlavor, @accentColor);
+        #catppuccin(@darkFlavor, @accentColor);
       }
     }
 
     @media (prefers-color-scheme: dark) {
       &[data-dark-theme="light"] {
-        #paradais(@lightFlavor, @accentColor);
+        #catppuccin(@lightFlavor, @accentColor);
       }
       &[data-dark-theme="dark"] {
-        #paradais(@darkFlavor, @accentColor);
+        #catppuccin(@darkFlavor, @accentColor);
       }
     }
   }
   [data-color-mode="light"][data-light-theme="dark"],
   [data-color-mode="dark"][data-dark-theme="dark"] {
-    #paradais(@darkFlavor, @accentColor);
+    #catppuccin(@darkFlavor, @accentColor);
   }
   [data-color-mode="light"][data-light-theme="light"],
   [data-color-mode="dark"][data-dark-theme="light"] {
-    #paradais(@lightFlavor, @accentColor);
+    #catppuccin(@lightFlavor, @accentColor);
   }
 
   html:not([data-light-theme="light"], [data-light-theme="dark"])
@@ -57,38 +57,38 @@
     max-width: 40ch;
     background-color: var(--color-danger-fg);
     color: var(--color-header-bg);
-    content: "Unsupported GitHub theme detected! Please switch to the default light/dark theme via the GitHub Appearance settings to get the best experience for the paradais GitHub userstyle.";
+    content: "Unsupported GitHub theme detected! Please switch to the default light/dark theme via the GitHub Appearance settings to get the best experience for the Catppuccin GitHub userstyle.";
     z-index: 9999;
   }
 
-  #paradais(@lookup, @accent) {
-    @rosewater: @paradais[@@lookup][@rosewater];
-    @flamingo: @paradais[@@lookup][@flamingo];
-    @pink: @paradais[@@lookup][@pink];
-    @mauve: @paradais[@@lookup][@mauve];
-    @red: @paradais[@@lookup][@red];
-    @maroon: @paradais[@@lookup][@maroon];
-    @peach: @paradais[@@lookup][@peach];
-    @yellow: @paradais[@@lookup][@yellow];
-    @green: @paradais[@@lookup][@green];
-    @teal: @paradais[@@lookup][@teal];
-    @sky: @paradais[@@lookup][@sky];
-    @sapphire: @paradais[@@lookup][@sapphire];
-    @blue: @paradais[@@lookup][@blue];
-    @lavender: @paradais[@@lookup][@lavender];
-    @text: @paradais[@@lookup][@text];
-    @subtext1: @paradais[@@lookup][@subtext1];
-    @subtext0: @paradais[@@lookup][@subtext0];
-    @overlay2: @paradais[@@lookup][@overlay2];
-    @overlay1: @paradais[@@lookup][@overlay1];
-    @overlay0: @paradais[@@lookup][@overlay0];
-    @surface2: @paradais[@@lookup][@surface2];
-    @surface1: @paradais[@@lookup][@surface1];
-    @surface0: @paradais[@@lookup][@surface0];
-    @base: @paradais[@@lookup][@base];
-    @mantle: @paradais[@@lookup][@mantle];
-    @crust: @paradais[@@lookup][@crust];
-    @accent-color: @paradais[@@lookup][@@accent];
+  #catppuccin(@lookup, @accent) {
+    @rosewater: @catppuccin[@@lookup][@rosewater];
+    @flamingo: @catppuccin[@@lookup][@flamingo];
+    @pink: @catppuccin[@@lookup][@pink];
+    @mauve: @catppuccin[@@lookup][@mauve];
+    @red: @catppuccin[@@lookup][@red];
+    @maroon: @catppuccin[@@lookup][@maroon];
+    @peach: @catppuccin[@@lookup][@peach];
+    @yellow: @catppuccin[@@lookup][@yellow];
+    @green: @catppuccin[@@lookup][@green];
+    @teal: @catppuccin[@@lookup][@teal];
+    @sky: @catppuccin[@@lookup][@sky];
+    @sapphire: @catppuccin[@@lookup][@sapphire];
+    @blue: @catppuccin[@@lookup][@blue];
+    @lavender: @catppuccin[@@lookup][@lavender];
+    @text: @catppuccin[@@lookup][@text];
+    @subtext1: @catppuccin[@@lookup][@subtext1];
+    @subtext0: @catppuccin[@@lookup][@subtext0];
+    @overlay2: @catppuccin[@@lookup][@overlay2];
+    @overlay1: @catppuccin[@@lookup][@overlay1];
+    @overlay0: @catppuccin[@@lookup][@overlay0];
+    @surface2: @catppuccin[@@lookup][@surface2];
+    @surface1: @catppuccin[@@lookup][@surface1];
+    @surface0: @catppuccin[@@lookup][@surface0];
+    @base: @catppuccin[@@lookup][@base];
+    @mantle: @catppuccin[@@lookup][@mantle];
+    @crust: @catppuccin[@@lookup][@crust];
+    @accent-color: @catppuccin[@@lookup][@@accent];
 
     color-scheme: if(@lookup = latte, light, dark);
 
@@ -521,7 +521,7 @@
 
     img[src="https://github.githubassets.com/assets/mona-loading-default-c3c7aad1282f.gif"]
     {
-      content: url("https://giscus.paradais.com/assets/loading_48x48.gif");
+      content: url("https://giscus.catppuccin.com/assets/loading_48x48.gif");
     }
 
     /* Header when logged out */
@@ -591,59 +591,59 @@
   [data-color-mode="auto"] {
     @media (prefers-color-scheme: light) {
       &[data-light-theme="light"] {
-        #paradais(@lightFlavor, @accentColor);
+        #catppuccin(@lightFlavor, @accentColor);
       }
       &[data-light-theme="dark"] {
-        #paradais(@darkFlavor, @accentColor);
+        #catppuccin(@darkFlavor, @accentColor);
       }
     }
 
     @media (prefers-color-scheme: dark) {
       &[data-dark-theme="light"] {
-        #paradais(@lightFlavor, @accentColor);
+        #catppuccin(@lightFlavor, @accentColor);
       }
       &[data-dark-theme="dark"] {
-        #paradais(@darkFlavor, @accentColor);
+        #catppuccin(@darkFlavor, @accentColor);
       }
     }
   }
   [data-color-mode="light"][data-light-theme="dark"],
   [data-color-mode="dark"][data-dark-theme="dark"] {
-    #paradais(@darkFlavor, @accentColor);
+    #catppuccin(@darkFlavor, @accentColor);
   }
   [data-color-mode="light"][data-light-theme="light"],
   [data-color-mode="dark"][data-dark-theme="light"] {
-    #paradais(@lightFlavor, @accentColor);
+    #catppuccin(@lightFlavor, @accentColor);
   }
 
-  #paradais(@lookup, @accent) {
-    @rosewater: @paradais[@@lookup][@rosewater];
-    @flamingo: @paradais[@@lookup][@flamingo];
-    @pink: @paradais[@@lookup][@pink];
-    @mauve: @paradais[@@lookup][@mauve];
-    @red: @paradais[@@lookup][@red];
-    @maroon: @paradais[@@lookup][@maroon];
-    @peach: @paradais[@@lookup][@peach];
-    @yellow: @paradais[@@lookup][@yellow];
-    @green: @paradais[@@lookup][@green];
-    @teal: @paradais[@@lookup][@teal];
-    @sky: @paradais[@@lookup][@sky];
-    @sapphire: @paradais[@@lookup][@sapphire];
-    @blue: @paradais[@@lookup][@blue];
-    @lavender: @paradais[@@lookup][@lavender];
-    @text: @paradais[@@lookup][@text];
-    @subtext1: @paradais[@@lookup][@subtext1];
-    @subtext0: @paradais[@@lookup][@subtext0];
-    @overlay2: @paradais[@@lookup][@overlay2];
-    @overlay1: @paradais[@@lookup][@overlay1];
-    @overlay0: @paradais[@@lookup][@overlay0];
-    @surface2: @paradais[@@lookup][@surface2];
-    @surface1: @paradais[@@lookup][@surface1];
-    @surface0: @paradais[@@lookup][@surface0];
-    @base: @paradais[@@lookup][@base];
-    @mantle: @paradais[@@lookup][@mantle];
-    @crust: @paradais[@@lookup][@crust];
-    @accent-color: @paradais[@@lookup][@@accent];
+  #catppuccin(@lookup, @accent) {
+    @rosewater: @catppuccin[@@lookup][@rosewater];
+    @flamingo: @catppuccin[@@lookup][@flamingo];
+    @pink: @catppuccin[@@lookup][@pink];
+    @mauve: @catppuccin[@@lookup][@mauve];
+    @red: @catppuccin[@@lookup][@red];
+    @maroon: @catppuccin[@@lookup][@maroon];
+    @peach: @catppuccin[@@lookup][@peach];
+    @yellow: @catppuccin[@@lookup][@yellow];
+    @green: @catppuccin[@@lookup][@green];
+    @teal: @catppuccin[@@lookup][@teal];
+    @sky: @catppuccin[@@lookup][@sky];
+    @sapphire: @catppuccin[@@lookup][@sapphire];
+    @blue: @catppuccin[@@lookup][@blue];
+    @lavender: @catppuccin[@@lookup][@lavender];
+    @text: @catppuccin[@@lookup][@text];
+    @subtext1: @catppuccin[@@lookup][@subtext1];
+    @subtext0: @catppuccin[@@lookup][@subtext0];
+    @overlay2: @catppuccin[@@lookup][@overlay2];
+    @overlay1: @catppuccin[@@lookup][@overlay1];
+    @overlay0: @catppuccin[@@lookup][@overlay0];
+    @surface2: @catppuccin[@@lookup][@surface2];
+    @surface1: @catppuccin[@@lookup][@surface1];
+    @surface0: @catppuccin[@@lookup][@surface0];
+    @base: @catppuccin[@@lookup][@base];
+    @mantle: @catppuccin[@@lookup][@mantle];
+    @crust: @catppuccin[@@lookup][@crust];
+    @accent-color: @catppuccin[@@lookup][@@accent];
 
     ::selection {
       background-color: fade(@accent-color, 30%);
@@ -698,37 +698,37 @@
 
 @-moz-document regexp("https:\/\/notebooks\.githubusercontent\.com\/view\/ipynb.*") {
   :root {
-    #paradais(@darkFlavor, @accentColor);
+    #catppuccin(@darkFlavor, @accentColor);
   }
 
-  #paradais(@lookup, @accent) {
-    @rosewater: @paradais[@@lookup][@rosewater];
-    @flamingo: @paradais[@@lookup][@flamingo];
-    @pink: @paradais[@@lookup][@pink];
-    @mauve: @paradais[@@lookup][@mauve];
-    @red: @paradais[@@lookup][@red];
-    @maroon: @paradais[@@lookup][@maroon];
-    @peach: @paradais[@@lookup][@peach];
-    @yellow: @paradais[@@lookup][@yellow];
-    @green: @paradais[@@lookup][@green];
-    @teal: @paradais[@@lookup][@teal];
-    @sky: @paradais[@@lookup][@sky];
-    @sapphire: @paradais[@@lookup][@sapphire];
-    @blue: @paradais[@@lookup][@blue];
-    @lavender: @paradais[@@lookup][@lavender];
-    @text: @paradais[@@lookup][@text];
-    @subtext1: @paradais[@@lookup][@subtext1];
-    @subtext0: @paradais[@@lookup][@subtext0];
-    @overlay2: @paradais[@@lookup][@overlay2];
-    @overlay1: @paradais[@@lookup][@overlay1];
-    @overlay0: @paradais[@@lookup][@overlay0];
-    @surface2: @paradais[@@lookup][@surface2];
-    @surface1: @paradais[@@lookup][@surface1];
-    @surface0: @paradais[@@lookup][@surface0];
-    @base: @paradais[@@lookup][@base];
-    @mantle: @paradais[@@lookup][@mantle];
-    @crust: @paradais[@@lookup][@crust];
-    @accent-color: @paradais[@@lookup][@@accent];
+  #catppuccin(@lookup, @accent) {
+    @rosewater: @catppuccin[@@lookup][@rosewater];
+    @flamingo: @catppuccin[@@lookup][@flamingo];
+    @pink: @catppuccin[@@lookup][@pink];
+    @mauve: @catppuccin[@@lookup][@mauve];
+    @red: @catppuccin[@@lookup][@red];
+    @maroon: @catppuccin[@@lookup][@maroon];
+    @peach: @catppuccin[@@lookup][@peach];
+    @yellow: @catppuccin[@@lookup][@yellow];
+    @green: @catppuccin[@@lookup][@green];
+    @teal: @catppuccin[@@lookup][@teal];
+    @sky: @catppuccin[@@lookup][@sky];
+    @sapphire: @catppuccin[@@lookup][@sapphire];
+    @blue: @catppuccin[@@lookup][@blue];
+    @lavender: @catppuccin[@@lookup][@lavender];
+    @text: @catppuccin[@@lookup][@text];
+    @subtext1: @catppuccin[@@lookup][@subtext1];
+    @subtext0: @catppuccin[@@lookup][@subtext0];
+    @overlay2: @catppuccin[@@lookup][@overlay2];
+    @overlay1: @catppuccin[@@lookup][@overlay1];
+    @overlay0: @catppuccin[@@lookup][@overlay0];
+    @surface2: @catppuccin[@@lookup][@surface2];
+    @surface1: @catppuccin[@@lookup][@surface1];
+    @surface0: @catppuccin[@@lookup][@surface0];
+    @base: @catppuccin[@@lookup][@base];
+    @mantle: @catppuccin[@@lookup][@mantle];
+    @crust: @catppuccin[@@lookup][@crust];
+    @accent-color: @catppuccin[@@lookup][@@accent];
 
     color-scheme: if(@lookup = latte, light, dark);
 
@@ -845,8 +845,11 @@
 }
 
 /* prettier-ignore */
-@paradais: {
-  @paradisa:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D  @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @text_filter: brightness(0) saturate(100%) invert(87%) sepia(6%) saturate(985%) hue-rotate(191deg) brightness(96%) contrast(99%); @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; @crust_filter: brightness(0) saturate(100%) invert(3%) sepia(12%) saturate(3951%) hue-rotate(206deg) brightness(96%) contrast(92%); };
+@catppuccin: {
+  @latte:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D  @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
+  @frappe:    { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D  @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
+  @macchiato: { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D  @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
+  @mocha:     { @rosewater: #BBB6B6; @flamingo: #A988B0; @pink: #A988B0; @mauve: #A988B0; @red: #B66467; @maroon: #B66467; @peach: #B66467; @yellow: #D9BC8C; @green: #8C977D  @teal: #8AA6A2; @sky: #8AA6A2; @sapphire: #8DA3B9; @blue: #8DA3B9; @lavender: #8DA3B9; @text: #E8E3E3; @subtext1: #BBB6B6; @subtext0: #BBB6B6; @overlay2: #424242; @overlay1: #424242; @overlay0: #424242; @surface2: #2E2E2E; @surface1: #2E2E2E; @surface0: #2E2E2E; @base: #151515; @mantle: #1F1F1F; @crust: #1F1F1F; };
 }
 
 // vim:ft=less
